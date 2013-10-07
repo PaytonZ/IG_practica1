@@ -14,9 +14,10 @@ using namespace std;
 
 // Viewport size
 int WIDTH= 500, HEIGHT= 250;
-
+//int WIDTH= 1280, HEIGHT= 1024;
 // Scene visible area size
 GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 250.0;
+//GLdouble xLeft= 0.0, xRight= 1280.0, yBot= 0.0, yTop= 1024.0;
 
 // Scene variables
 GLdouble xTriangle= 100.0, yTriangle= 100.0;
@@ -26,7 +27,7 @@ GLdouble triangleWidth= 100.0, triangleHeight= 50.0;
 void intitGL(){
 
 	glClearColor(1.0,1.0,1.0,1.0);
-	glColor3f(1.0,0.0,0.0); 
+	glColor3f(0.0,1.0,0.0); 
 
 	glPointSize(4.0);
 	glLineWidth(2.0);
@@ -47,13 +48,47 @@ void intitGL(){
 
 void display(void){
   glClear( GL_COLOR_BUFFER_BIT );
-
+  GLdouble ancho=50.0;
   // Scene rendering
+  GLdouble x1= xRight/2 , y1=0;
+   GLdouble x2 = (xRight/2)+ancho ,y2=y1+ancho;
+  
+  /* //rectangulito
+   glColor3f(1.0,1.0,0.0); //rgb
+  glRectd(x1,y1,x2,y2);
+
+   cout << x1 << endl << x2   << endl<< y1   << endl<< y2  << endl;
+  
+   //tejadito
+   glColor3f(1.0,0.0,0.0); //rgb
   glBegin ( GL_TRIANGLES ) ;
-       glVertex2d( xTriangle, yTriangle );
-       glVertex2d( xTriangle + triangleWidth, yTriangle );
-       glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
+       glVertex2d( x1,y2 );
+	   glVertex2d( x2, y2);
+	   glVertex2d( (x1+x2)/2, y2+ancho/2);
+     //puertita*/
+
+	   glColor3f(0,0,0); //rgb
+	   glBegin(GL_LINES);
+		glVertex2d( x1+25,y1 );
+		glVertex2d( x1+25,y2+25 );
+		glVertex2d( x2-25,y1 );
+		glVertex2d( x2-25,y2+25 );
+
+       
   glEnd () ;
+
+  
+  
+
+  
+
+ 
+
+		
+ 
+
+ 
+
 
   glFlush();
   glutSwapBuffers();
@@ -124,7 +159,7 @@ void key(unsigned char key, int x, int y){
 
 
 int main(int argc, char *argv[]){
-  cout<< "Starting console..." << endl;
+  cout<< "Starting trollsole..." << endl;
 
   int my_window; //my window's identifier
 
