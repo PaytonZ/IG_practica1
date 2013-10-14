@@ -6,7 +6,7 @@
 //#include <GL/glut.h>
 
 #include <iostream>
-using namespace std;
+
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -77,17 +77,7 @@ void display(void){
        
   glEnd () ;
 
-  
-  
-
-  
-
- 
-
-		
- 
-
- 
+   
 
 
   glFlush();
@@ -180,6 +170,7 @@ int main(int argc, char *argv[]){
   //OpenGL basic setting
   intitGL();
 
+  
 
   // Freeglut's main loop can be stopped executing (**)
   //while ( continue_in_main_loop )

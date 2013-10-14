@@ -119,7 +119,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="escena.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="punto.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="escena.h" />
+    <ClInclude Include="punto.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
