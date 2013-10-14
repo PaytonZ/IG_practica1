@@ -7,12 +7,12 @@ extern int WIDTH, HEIGHT;
 
 class escena
 {
-		
+
 public:
-	
+
 	static escena getAVEInstance();
-    static escena getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop);
-	 
+	static escena getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop);
+
 	GLdouble getxRight() const;
 	void setxRight(GLdouble);
 
@@ -26,17 +26,17 @@ public:
 
 	GLdouble getyBot() const;
 	void setyBot(GLdouble);
-	
-	
+
+
 	punto getCentro();
 
 
-static	void  __cdecl resize(int newWidth, int newHeight);
-	
+	static	void  __cdecl resize(int newWidth, int newHeight);
 
 
-	private:
-	
+
+private:
+
 	escena() {}
 	escena(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop):
 		xLeft(new_xleft) , xRight(new_xright) ,  yBot(new_yBot) , yTop(new_yTop) {}
@@ -46,12 +46,12 @@ static	void  __cdecl resize(int newWidth, int newHeight);
 
 	GLdouble xLeft;
 	GLdouble xRight;
-	
+
 	GLdouble yBot;
 	GLdouble yTop;
 
-	
-		
+
+
 
 
 };

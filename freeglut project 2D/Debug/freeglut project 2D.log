@@ -1,4 +1,4 @@
-﻿Compilación iniciada a las 14/10/2013 21:01:04.
+﻿Compilación iniciada a las 14/10/2013 23:00:49.
      1>Proyecto "E:\Mis Documentos\GitHub\IG_practica1\freeglut project 2D\freeglut project 2D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          E:\programas\Visual Studio 2012\VC\bin\CL.exe /c /I"E:\Mis Documentos\GitHub\IG_practica1\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -14,4 +14,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:00.33
+Tiempo transcurrido 00:00:01.29

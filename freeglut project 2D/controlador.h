@@ -1,8 +1,17 @@
-#pragma once
+#include <Windows.h>
+#include <gl/GL.h>
+#include <gl/GLU.h>
+
+#include <GL/freeglut.h>
+
 class controlador
 {
 public:
-	controlador(void);
-	~controlador(void);
+
+	static void key(unsigned char, int, int);
+
+
+
+
 };
 

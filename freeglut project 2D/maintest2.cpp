@@ -1,4 +1,4 @@
-#include <Windows.h>
+/*#include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
 
@@ -99,7 +99,7 @@ void key(unsigned char key, int x, int y){
   bool need_redisplay = true;
 
   switch (key) {
-  case 27:  /* Escape key */
+  case 27:  // Escape key 
     //continue_in_main_loop = false; // (**)
 	glutLeaveMainLoop (); //Freeglut's sentence for stopping glut's main loop (*)
     break;
@@ -162,3 +162,4 @@ int main(int argc, char *argv[]){
    
   return 0;
 }
+*/
