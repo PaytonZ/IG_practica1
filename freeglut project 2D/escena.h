@@ -3,52 +3,56 @@
 #include <gl/GL.h>
 #include <gl/GLU.h>
 
+extern int WIDTH, HEIGHT;
+
 class escena
 {
-
-	private:
 		
-	
-	GLdouble xRight;
-	GLdouble xLeft;
-
-	GLdouble yRight;
-	GLdouble yLeft;
-
-
 public:
-	escena() {}
-	escena(GLdouble new_xleft, GLdouble new_yleft , GLdouble new_xright, GLdouble new_yright ):
-		xLeft(new_xleft) , xRight(new_xright) ,  yLeft(new_yleft) , yRight(new_yright) {}
-		
-
-	/*
-	getter setter para 4
-	centro de la escena
-
-
-	*/
-
-	GLdouble getxRight();
+	
+	static escena getAVEInstance();
+    static escena getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop);
+	 
+	GLdouble getxRight() const;
 	void setxRight(GLdouble);
 
-	GLdouble getyRight() const;
-	void setyRight(GLdouble);
 
 	GLdouble getxLeft() const;
 	void setxLeft(GLdouble);
 
-	GLdouble getyLeft() const;
-	void  setyLeft(GLdouble);
+
+	GLdouble getyTop() const;
+	void  setyTop(GLdouble);
+
+	GLdouble getyBot() const;
+	void setyBot(GLdouble);
+	
 	
 	punto getCentro();
 
-	void resize(int, int);
+
+static	void  __cdecl resize(int newWidth, int newHeight);
+	
 
 
+	private:
+	
+	escena() {}
+	escena(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop):
+		xLeft(new_xleft) , xRight(new_xright) ,  yBot(new_yBot) , yTop(new_yTop) {}
 
+	static escena AVE;
+
+
+	GLdouble xLeft;
+	GLdouble xRight;
+	
+	GLdouble yBot;
+	GLdouble yTop;
 
 	
+		
+
 
 };
 

@@ -1,69 +1,106 @@
 #include "escena.h"
 
+extern int WIDTH, HEIGHT;
 
+escena escena::AVE;
 
-GLdouble escena::xRight() const{
+GLdouble escena::getxRight() const{
 	return xRight;
 }
-	void escena::xRight(GLdouble new_xRight){
+void escena::setxRight(GLdouble new_xRight){
 		xRight= new_xRight;
-	}
+}
 
-	GLdouble escena::getyRight() const{}
-	void escena::setyRight(GLdouble){}
+GLdouble escena::getyTop() const{
+	return yTop;
 
-	GLdouble escena::getxLeft() const{
+}
+
+void escena::setyTop(GLdouble new_ytop){
+	yTop= new_ytop;
+}
+
+
+GLdouble escena::getxLeft() const{
+	return xLeft;
+}
+
+void escena::setxLeft(GLdouble new_xleft){
+	
+		xLeft=new_xleft;
 	
 	}
-	void escena::getxLeft(GLdouble new_xleft){
-	
-		new_xleft
-	
+
+	GLdouble escena::getyBot() const{
+		return yBot;
 	}
 
-	GLdouble escena::getyLeft() const{}
-
-	escena::setyLeft(GLdouble )
+	void escena::setyBot(GLdouble new_ybot )
 	{
-
+		yBot=new_ybot;
 	}
 	
 	 punto escena::getCentro()
 	 {
+		 punto p= punto(GLdouble(1) , GLdouble (2));
 
+		 return p;
 	 }
 
-/*
-void escena::resize(int newWidth, int newHeight){
-  //Resize Viewport
+
+void __cdecl  escena::resize(int newWidth, int newHeight){
+
+	//Resize Viewport
   WIDTH= newWidth;
   HEIGHT= newHeight;
   GLdouble RatioViewPort= (float)WIDTH/(float)HEIGHT;
   glViewport ( 0, 0, WIDTH, HEIGHT ) ;
   
+
+ 
   //Resize Scene Visible Area 
   //Se actualiza el área visible de la escena
   //para que su ratio coincida con ratioViewPort
-  GLdouble SVAWidth= xRight-xLeft;
-  GLdouble SVAHeight= yTop-yBot;
+
+  GLdouble SVAWidth= getAVEInstance().getxRight()- getAVEInstance().getxLeft();
+
+  GLdouble SVAHeight= getAVEInstance().getyTop()-getAVEInstance().getyBot();
   GLdouble SVARatio= SVAWidth/SVAHeight;
   if (SVARatio >= RatioViewPort) {
 	 // Increase SVAHeight
      GLdouble newHeight= SVAWidth/RatioViewPort;
-	 GLdouble yMiddle= ( yBot+yTop )/2.0;
-     yTop= yMiddle + newHeight/2.0;
-     yBot= yMiddle - newHeight/2.0;
+	 GLdouble yMiddle= ( getAVEInstance().getyBot()+getAVEInstance().getyTop() )/2.0;
+     getAVEInstance().setyTop(( yMiddle + newHeight)/2.0);
+     getAVEInstance().setyBot ((yMiddle - newHeight)/2.0);
      }
   else {
      //Increase SVAWidth
      GLdouble newWidth= SVAHeight*RatioViewPort;
-     GLdouble xMiddle= ( xLeft+xRight )/2.0;
-	 xRight= xMiddle + newWidth/2.0;
-     xLeft=  xMiddle - newWidth/2.0;
+     GLdouble xMiddle= ((getAVEInstance().getxLeft()+getAVEInstance().getxRight() )/2.0);
+	 getAVEInstance().setxRight((xMiddle + newWidth)/2.0);
+     getAVEInstance().setxLeft(( xMiddle - newWidth)/2.0);
   }
 
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
-  gluOrtho2D(xLeft, xRight, yBot, yTop);
+  gluOrtho2D(getAVEInstance().getxLeft(),getAVEInstance().getxRight(), getAVEInstance().getyBot(), getAVEInstance().getyTop());
+  
+  
+  
 }
-*/
+
+
+	 escena escena::getAVEInstance()
+		{       
+					
+        return AVE;
+	 }
+
+	  escena escena::getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop)
+		{       
+			
+			return escena(new_xleft,new_yBot, new_xright, new_yTop);
+    
+	 }
+
+	  

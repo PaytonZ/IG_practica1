@@ -1,4 +1,4 @@
-#include <Windows.h>
+/*#include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
 
@@ -14,12 +14,15 @@
 // bool continue_in_main_loop= true; //(**)
 
 // Viewport size
-int WIDTH= 500, HEIGHT= 250;
-//int WIDTH= 1280, HEIGHT= 1024;
+int WIDTH= 1000, HEIGHT= 500;
+
 // Scene visible area size
 GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 250.0;
 
-escena escena;
+escena escena_principal = escena::getAVEInstance(xLeft,yBot,xRight,yTop);
+
+
+
 //GLdouble xLeft= 0.0, xRight= 1280.0, yBot= 0.0, yTop= 1024.0;
 
 // Scene variables
@@ -45,46 +48,35 @@ void intitGL(){
     // Scene Visible Area
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluOrtho2D(xLeft, xRight, yBot, yTop); 
+    //gluOrtho2D(xLeft, xRight, yBot, yTop);
+
+	
+  std::cout << "xright:" <<  escena_principal.getxRight() << std::endl;
+  std::cout <<  "xleft:" <<  escena_principal.getxLeft() << std::endl;
+  std::cout << "ytop:" <<  escena_principal.getyTop() << std::endl;
+  std::cout << "ybot:" <<  escena_principal.getyBot()<< std::endl;
+
+	gluOrtho2D(escena_principal.getxLeft(), escena_principal.getxRight(), escena_principal.getyBot(), escena_principal.getyTop()); 
  }
 
 
-void display(void){
-  glClear( GL_COLOR_BUFFER_BIT );
-  GLdouble ancho=50.0;
+void display(){
+
+         
+glClear( GL_COLOR_BUFFER_BIT );
+
   // Scene rendering
-  GLdouble x1= xRight/2 , y1=0;
-   GLdouble x2 = (xRight/2)+ancho ,y2=y1+ancho;
-  
-  /* //rectangulito
-   glColor3f(1.0,1.0,0.0); //rgb
-  glRectd(x1,y1,x2,y2);
-
-   cout << x1 << endl << x2   << endl<< y1   << endl<< y2  << endl;
-  
-   //tejadito
-   glColor3f(1.0,0.0,0.0); //rgb
   glBegin ( GL_TRIANGLES ) ;
-       glVertex2d( x1,y2 );
-	   glVertex2d( x2, y2);
-	   glVertex2d( (x1+x2)/2, y2+ancho/2);
-     //puertita*/
-
-	   glColor3f(0,0,0); //rgb
-	   glBegin(GL_LINES);
-		glVertex2d( x1+25,y1 );
-		glVertex2d( x1+25,y2+25 );
-		glVertex2d( x2-25,y1 );
-		glVertex2d( x2-25,y2+25 );
-
-       
+       glVertex2d( xTriangle, yTriangle );
+       glVertex2d( xTriangle + triangleWidth, yTriangle );
+       glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
   glEnd () ;
-
-   
-
 
   glFlush();
   glutSwapBuffers();
+
+   
+    
 }
 
 
@@ -98,8 +90,8 @@ void key(unsigned char key, int x, int y){
   bool need_redisplay = true;
 
   switch (key) {
-  case 27:  /* Escape key */
-    //continue_in_main_loop = false; // (**)
+  case 27:  // Escape key 
+    //continue_in_main_loop = false; // 
 	glutLeaveMainLoop (); //Freeglut's sentence for stopping glut's main loop (*)
     break;
 
@@ -123,7 +115,13 @@ void key(unsigned char key, int x, int y){
 
 
 int main(int argc, char *argv[]){
+
   std::cout<< "Starting ..." << std::endl;
+
+  std::cout << "xright:" <<  escena_principal.getxRight() << std::endl;
+  std::cout <<  "xleft:" <<  escena_principal.getxLeft() << std::endl;
+  std::cout << "ytop:" <<  escena_principal.getyTop() << std::endl;
+  std::cout << "ybot:" <<  escena_principal.getyBot()<< std::endl;
 
   int my_window; //my window's identifier
 
@@ -134,10 +132,10 @@ int main(int argc, char *argv[]){
   glutInit(&argc, argv);
 
   //Window construction
-  my_window = glutCreateWindow( "Freeglut 2D-project" );
+  my_window = glutCreateWindow( "IG Practica 1 - Pythagoras tree" );
     
   //Callback registration
-  glutReshapeFunc(escena.resize);
+  glutReshapeFunc(escena::resize);
   glutKeyboardFunc(key);
   glutDisplayFunc(display);
 
@@ -162,3 +160,4 @@ int main(int argc, char *argv[]){
    
   return 0;
 }
+*/

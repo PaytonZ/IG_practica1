@@ -13,12 +13,12 @@ public:
 	//Constuctor - destructor
 	punto(GLdouble newx , GLdouble newy): x(newx), y(newy){}
 	
-	// Getter setter
+	/* Getter setter
 	GLdouble x() const;
 	GLdouble y() const;
 	void x(GLdouble);
 	void y(GLdouble);
-
+	*/
 };
 
 

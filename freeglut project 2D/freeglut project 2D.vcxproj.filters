@@ -27,6 +27,9 @@
     <ClCompile Include="controlador.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="maintest2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="escena.h">
