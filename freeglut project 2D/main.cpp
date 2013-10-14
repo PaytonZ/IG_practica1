@@ -7,6 +7,7 @@
 
 #include <iostream>
 
+#include "escena.h"
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -17,6 +18,8 @@ int WIDTH= 500, HEIGHT= 250;
 //int WIDTH= 1280, HEIGHT= 1024;
 // Scene visible area size
 GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 250.0;
+
+escena escena;
 //GLdouble xLeft= 0.0, xRight= 1280.0, yBot= 0.0, yTop= 1024.0;
 
 // Scene variables
@@ -85,38 +88,9 @@ void display(void){
 }
 
 
-void resize(int newWidth, int newHeight){
-  //Resize Viewport
-  WIDTH= newWidth;
-  HEIGHT= newHeight;
-  GLdouble RatioViewPort= (float)WIDTH/(float)HEIGHT;
-  glViewport ( 0, 0, WIDTH, HEIGHT ) ;
-  
-  //Resize Scene Visible Area 
-  //Se actualiza el área visible de la escena
-  //para que su ratio coincida con ratioViewPort
-  GLdouble SVAWidth= xRight-xLeft;
-  GLdouble SVAHeight= yTop-yBot;
-  GLdouble SVARatio= SVAWidth/SVAHeight;
-  if (SVARatio >= RatioViewPort) {
-	 // Increase SVAHeight
-     GLdouble newHeight= SVAWidth/RatioViewPort;
-	 GLdouble yMiddle= ( yBot+yTop )/2.0;
-     yTop= yMiddle + newHeight/2.0;
-     yBot= yMiddle - newHeight/2.0;
-     }
-  else {
-     //Increase SVAWidth
-     GLdouble newWidth= SVAHeight*RatioViewPort;
-     GLdouble xMiddle= ( xLeft+xRight )/2.0;
-	 xRight= xMiddle + newWidth/2.0;
-     xLeft=  xMiddle - newWidth/2.0;
-  }
 
-  glMatrixMode(GL_PROJECTION);
-  glLoadIdentity();
-  gluOrtho2D(xLeft, xRight, yBot, yTop);
-}
+
+
 
 
 void key(unsigned char key, int x, int y){
@@ -149,7 +123,7 @@ void key(unsigned char key, int x, int y){
 
 
 int main(int argc, char *argv[]){
-  cout<< "Starting trollsole..." << endl;
+  std::cout<< "Starting ..." << std::endl;
 
   int my_window; //my window's identifier
 
@@ -163,7 +137,7 @@ int main(int argc, char *argv[]){
   my_window = glutCreateWindow( "Freeglut 2D-project" );
     
   //Callback registration
-  glutReshapeFunc(resize);
+  glutReshapeFunc(escena.resize);
   glutKeyboardFunc(key);
   glutDisplayFunc(display);
 

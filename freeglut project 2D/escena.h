@@ -1,4 +1,5 @@
 #include <Windows.h>
+#include "punto.h"
 #include <gl/GL.h>
 #include <gl/GLU.h>
 
@@ -28,19 +29,22 @@ public:
 
 	*/
 
-	GLdouble xRight() const;
-	void xRight(GLdouble);
+	GLdouble getxRight();
+	void setxRight(GLdouble);
 
-	GLdouble yRight() const;
-	void yRight(GLdouble);
+	GLdouble getyRight() const;
+	void setyRight(GLdouble);
 
-	GLdouble xLeft() const;
-	void xLeft(GLdouble);
+	GLdouble getxLeft() const;
+	void setxLeft(GLdouble);
 
-	GLdouble yLeft() const;
-	void yLeft(GLdouble);
+	GLdouble getyLeft() const;
+	void  setyLeft(GLdouble);
 	
-	GLdouble getCentro();
+	punto getCentro();
+
+	void resize(int, int);
+
 
 
 

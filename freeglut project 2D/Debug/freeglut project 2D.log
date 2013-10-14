@@ -1,14 +1,80 @@
-﻿Compilación iniciada a las 14/10/2013 13:02:39.
+﻿Compilación iniciada a las 14/10/2013 14:38:54.
      1>Proyecto "C:\hlocal\IG_practica1\freeglut project 2D\freeglut project 2D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\software\programacion\MSVStudio2012\VC\bin\CL.exe /c /IC:\hlocal\IG_practica1\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\software\programacion\MSVStudio2012\VC\bin\CL.exe /c /IC:\hlocal\IG_practica1\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt controlador.cpp escena.cpp main.cpp punto.cpp
+         punto.cpp
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(17): error C2365: 'punto::x' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(11) : vea la declaración de 'punto::x'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(18): error C2365: 'punto::y' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(12) : vea la declaración de 'punto::y'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(19): error C2365: 'punto::x' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(11) : vea la declaración de 'punto::x'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(20): error C2365: 'punto::y' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(12) : vea la declaración de 'punto::y'
          main.cpp
-       Link:
-         C:\software\programacion\MSVStudio2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\IG_practica1\Debug\freeglut project 2D.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\hlocal\IG_practica1\freeglut\lib\ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\IG_practica1\Debug\freeglut project 2D.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\IG_practica1\Debug\freeglut project 2D.lib" /MACHINE:X86 Debug\main.obj
-         LINK : no se encontró C:\hlocal\IG_practica1\Debug\freeglut project 2D.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
-         freeglut project 2D.vcxproj -> C:\hlocal\IG_practica1\Debug\freeglut project 2D.exe
-     1>Compilación del proyecto terminada "C:\hlocal\IG_practica1\freeglut project 2D\freeglut project 2D.vcxproj" (Build destinos).
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(17): error C2365: 'punto::x' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(11) : vea la declaración de 'punto::x'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(18): error C2365: 'punto::y' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(12) : vea la declaración de 'punto::y'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(19): error C2365: 'punto::x' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(11) : vea la declaración de 'punto::x'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(20): error C2365: 'punto::y' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(12) : vea la declaración de 'punto::y'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(32): error C2365: 'escena::xRight' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(12) : vea la declaración de 'escena::xRight'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(33): error C2365: 'escena::xRight' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(12) : vea la declaración de 'escena::xRight'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(35): error C2365: 'escena::yRight' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(15) : vea la declaración de 'escena::yRight'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(36): error C2365: 'escena::yRight' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(15) : vea la declaración de 'escena::yRight'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(38): error C2365: 'escena::xLeft' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(13) : vea la declaración de 'escena::xLeft'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(39): error C2365: 'escena::xLeft' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(13) : vea la declaración de 'escena::xLeft'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(41): error C2365: 'escena::yLeft' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(16) : vea la declaración de 'escena::yLeft'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(42): error C2365: 'escena::yLeft' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(16) : vea la declaración de 'escena::yLeft'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\main.cpp(140): error C3867: 'escena::resize': falta la lista de argumentos de la llamada a la función; utilice '&escena::resize' para crear un puntero al miembro
+         escena.cpp
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(17): error C2365: 'punto::x' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(11) : vea la declaración de 'punto::x'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(18): error C2365: 'punto::y' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(12) : vea la declaración de 'punto::y'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(19): error C2365: 'punto::x' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(11) : vea la declaración de 'punto::x'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\punto.h(20): error C2365: 'punto::y' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\punto.h(12) : vea la declaración de 'punto::y'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(32): error C2365: 'escena::xRight' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(12) : vea la declaración de 'escena::xRight'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(33): error C2365: 'escena::xRight' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(12) : vea la declaración de 'escena::xRight'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(35): error C2365: 'escena::yRight' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(15) : vea la declaración de 'escena::yRight'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(36): error C2365: 'escena::yRight' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(15) : vea la declaración de 'escena::yRight'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(38): error C2365: 'escena::xLeft' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(13) : vea la declaración de 'escena::xLeft'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(39): error C2365: 'escena::xLeft' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(13) : vea la declaración de 'escena::xLeft'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(41): error C2365: 'escena::yLeft' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(16) : vea la declaración de 'escena::yLeft'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.h(42): error C2365: 'escena::yLeft' : nueva definición; la definición anterior era 'miembro de datos'
+                 c:\hlocal\ig_practica1\freeglut project 2d\escena.h(16) : vea la declaración de 'escena::yLeft'
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.cpp(5): error C2063: 'escena::xRight' : no es una función
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.cpp(8): error C2063: 'escena::xRight' : no es una función
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.cpp(12): error C2063: 'escena::yRight' : no es una función
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.cpp(13): error C2063: 'escena::yRight' : no es una función
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.cpp(15): error C2761: 'GLdouble escena::xLeft' : no se permite la nueva declaración de la función miembro
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.cpp(16): error C2761: 'GLdouble escena::xLeft' : no se permite la nueva declaración de la función miembro
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.cpp(18): error C2761: 'GLdouble escena::yLeft' : no se permite la nueva declaración de la función miembro
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.cpp(20): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+     1>c:\hlocal\ig_practica1\freeglut project 2d\escena.cpp(20): error C2063: 'escena::yLeft' : no es una función
+         controlador.cpp
+         Generando código...
+     1>Compilación del proyecto terminada "C:\hlocal\IG_practica1\freeglut project 2D\freeglut project 2D.vcxproj" (Build destinos) -- ERROR.
 
-Compilación correcta.
+ERROR al compilar.
 
-Tiempo transcurrido 00:00:02.22
+Tiempo transcurrido 00:00:02.02

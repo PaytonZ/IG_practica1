@@ -21,6 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8C29A969-64B0-434E-84B7-474EDCA5F26A}</ProjectGuid>
     <RootNamespace>freeglutproject2D</RootNamespace>
+    <ProjectName>practica 1 IG</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -119,11 +120,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="controlador.cpp" />
     <ClCompile Include="escena.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="punto.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="controlador.h" />
     <ClInclude Include="escena.h" />
     <ClInclude Include="punto.h" />
   </ItemGroup>
