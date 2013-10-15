@@ -3,33 +3,64 @@
 #include <gl/GLU.h>
 #include "controlador.h"
 #include <GL/freeglut.h>
+#include <iostream>
+#include "escena.h"
 
 
 
 void controlador::key(unsigned char key, int x, int y){
- 
-  bool need_redisplay = true;
 
-  switch (key) {
-  case 27:  // Escape key 
-    //continue_in_main_loop = false; // 
-	glutLeaveMainLoop (); //Freeglut's sentence for stopping glut's main loop (*)
-    break;
+	bool need_redisplay = true;
 
-  case '+' :
-    
-    break ;
+	switch (key) {
+	case 27:  // Escape key 
+		//continue_in_main_loop = false; // 
+		glutLeaveMainLoop (); //Freeglut's sentence for stopping glut's main loop (*)
+		break;
 
-  case '-' :
-  
-    break ;
+	case '+' :
+		escena::getAVEInstance()->escalacion(1.1);
+		break ;
 
-  default:
-    need_redisplay = false;
-    break;
-  }//switch
+	case '-' :
+		escena::getAVEInstance()->escalacion(0.9);
+		break ;
 
-  if (need_redisplay)
-    glutPostRedisplay();
+	default:
+		need_redisplay = false;
+		break;
+	}//switch
+
+	if (need_redisplay)
+		glutPostRedisplay();
 }
 
+void controlador::key(int key, int x, int y){
+
+	bool need_redisplay = true;
+
+	switch (key) {
+
+	case GLUT_KEY_LEFT:
+		escena::getAVEInstance()->translacionX(10.0);
+		break;
+	case GLUT_KEY_UP :
+		escena::getAVEInstance()->translacionY(-10.0);
+
+		break;
+	case GLUT_KEY_RIGHT :
+		escena::getAVEInstance()->translacionX(-10.0);
+
+		break;
+	case GLUT_KEY_DOWN :
+		escena::getAVEInstance()->translacionY(10.0);
+		break;		
+
+	default:
+		need_redisplay = false;
+		break;
+	}//switch
+
+	if (need_redisplay)
+		glutPostRedisplay();
+}

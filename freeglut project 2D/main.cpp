@@ -20,7 +20,7 @@ int WIDTH= 1000, HEIGHT= 500;
 // Scene visible area size
 GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 250.0;
 
-escena escena_principal = escena::getAVEInstance(xLeft,yBot,xRight,yTop);
+
 controlador controlador ;
 
 
@@ -50,8 +50,8 @@ void intitGL(){
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
-
-	gluOrtho2D(escena_principal.getxLeft(), escena_principal.getxRight(), escena_principal.getyBot(), escena_principal.getyTop()); 
+	escena *escena_principal= escena::getAVEInstance();
+	gluOrtho2D(escena_principal->getxLeft(), escena_principal->getxRight(), escena_principal->getyBot(), escena_principal->getyTop()); 
 }
 
 
@@ -66,6 +66,14 @@ void display(){
 	glVertex2d( xTriangle + triangleWidth, yTriangle );
 	glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
 	glEnd () ;
+	
+	punto p=escena::getAVEInstance()->getCentro();
+
+	
+	glBegin(GL_POINTS);
+		glVertex2d(p.x,p.y);
+	glEnd();
+		
 
 	glFlush();
 	glutSwapBuffers();
@@ -75,12 +83,12 @@ void display(){
 }
 
 
-
-
 int main(int argc, char *argv[]){
 
 	std::cout<< "Starting ..." << std::endl;
 
+	//Inicializacion de mi AVE implementada con singleton
+	escena::getAVEInstance(xLeft,yBot,xRight,yTop);
 
 	int my_window; //my window's identifier
 
@@ -96,6 +104,7 @@ int main(int argc, char *argv[]){
 	//Callback registration
 	glutReshapeFunc(escena::resize);
 	glutKeyboardFunc(controlador::key);
+	glutSpecialFunc(controlador::key);
 	glutDisplayFunc(display);
 
 	//OpenGL basic setting

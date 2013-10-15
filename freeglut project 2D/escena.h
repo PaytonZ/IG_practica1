@@ -10,8 +10,8 @@ class escena
 
 public:
 
-	static escena getAVEInstance();
-	static escena getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop);
+	static escena* getAVEInstance();
+	static escena* getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop);
 
 	GLdouble getxRight() const;
 	void setxRight(GLdouble);
@@ -32,7 +32,12 @@ public:
 
 
 	static	void  __cdecl resize(int newWidth, int newHeight);
+	
+	void translacionX(GLdouble);
+	void translacionY(GLdouble);
 
+	void escalacion(GLdouble);
+	
 
 
 private:
@@ -41,18 +46,15 @@ private:
 	escena(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop):
 		xLeft(new_xleft) , xRight(new_xright) ,  yBot(new_yBot) , yTop(new_yTop) {}
 
-	static escena AVE;
-
+	static escena* AVE;
+	static void _AVE_deleter() { delete AVE; }
 
 	GLdouble xLeft;
 	GLdouble xRight;
 
 	GLdouble yBot;
 	GLdouble yTop;
-
-
-
-
-
+	
+	
 };
 
