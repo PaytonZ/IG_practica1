@@ -1,11 +1,13 @@
-﻿Compilación iniciada a las 15/10/2013 19:18:16.
+﻿Compilación iniciada a las 15/10/2013 19:40:41.
      1>Proyecto "E:\Mis Documentos\GitHub\IG_practica1\freeglut project 2D\freeglut project 2D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         E:\programas\Visual Studio 2012\VC\bin\CL.exe /c /I"E:\Mis Documentos\GitHub\IG_practica1\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt escena.cpp
-         escena.cpp
+         E:\programas\Visual Studio 2012\VC\bin\CL.exe /c /I"E:\Mis Documentos\GitHub\IG_practica1\freeglut\include\\" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt cuadrado.cpp
+         cuadrado.cpp
        Link:
          E:\programas\Visual Studio 2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Mis Documentos\GitHub\IG_practica1\Debug\practica 1 IG.exe" /INCREMENTAL /NOLOGO /LIBPATH:"E:\Mis Documentos\GitHub\IG_practica1\freeglut\lib\\" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Mis Documentos\GitHub\IG_practica1\Debug\practica 1 IG.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Mis Documentos\GitHub\IG_practica1\Debug\practica 1 IG.lib" /MACHINE:X86 Debug\controlador.obj
+         Debug\cuadrado.obj
          Debug\escena.obj
+         Debug\lapiz.obj
          Debug\main.obj
          Debug\punto.obj
          Debug\maintest2.obj
@@ -14,4 +16,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:01.27
+Tiempo transcurrido 00:00:01.01

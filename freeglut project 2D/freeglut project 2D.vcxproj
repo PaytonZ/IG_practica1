@@ -121,14 +121,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="controlador.cpp" />
+    <ClCompile Include="cuadrado.cpp" />
     <ClCompile Include="escena.cpp" />
+    <ClCompile Include="lapiz.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="punto.cpp" />
     <ClCompile Include="maintest2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Practica1_TAIS\TADs-EDA\Excepciones.h" />
+    <ClInclude Include="..\..\Practica1_TAIS\TADs-EDA\Lista.h" />
     <ClInclude Include="controlador.h" />
+    <ClInclude Include="cuadrado.h" />
     <ClInclude Include="escena.h" />
+    <ClInclude Include="lapiz.h" />
     <ClInclude Include="punto.h" />
   </ItemGroup>
   <ItemGroup>
