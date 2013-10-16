@@ -130,13 +130,12 @@
     <ClCompile Include="maintest2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\TADs-EDA\Excepciones.h" />
-    <ClInclude Include="..\..\TADs-EDA\Lista.h" />
     <ClInclude Include="arbol.h" />
     <ClInclude Include="controlador.h" />
     <ClInclude Include="cuadrado.h" />
     <ClInclude Include="escena.h" />
     <ClInclude Include="lapiz.h" />
+    <ClInclude Include="Lista.h" />
     <ClInclude Include="punto.h" />
   </ItemGroup>
   <ItemGroup>

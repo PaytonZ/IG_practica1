@@ -1,7 +1,13 @@
+#ifndef ESCENA_H
+#define ESCENA_H
+
 #include <Windows.h>
 #include "punto.h"
 #include <gl/GL.h>
 #include <gl/GLU.h>
+#include "arbol.h"
+
+
 
 extern int WIDTH, HEIGHT;
 
@@ -16,10 +22,8 @@ public:
 	GLdouble getxRight() const;
 	void setxRight(GLdouble);
 
-
 	GLdouble getxLeft() const;
 	void setxLeft(GLdouble);
-
 
 	GLdouble getyTop() const;
 	void  setyTop(GLdouble);
@@ -30,14 +34,15 @@ public:
 
 	punto getCentro();
 
-
 	static	void  __cdecl resize(int newWidth, int newHeight);
-	
+
 	void translacionX(GLdouble);
 	void translacionY(GLdouble);
-
 	void escalacion(GLdouble);
-	
+
+	arbol getArbol();
+	void setArbol(arbol);
+
 
 
 private:
@@ -49,12 +54,16 @@ private:
 	static escena* AVE;
 	static void _AVE_deleter() { delete AVE; }
 
+	arbol arbol_pitagoras;
+
 	GLdouble xLeft;
 	GLdouble xRight;
 
 	GLdouble yBot;
 	GLdouble yTop;
-	
-	
+
+
 };
+
+#endif // !ESCENA_H
 

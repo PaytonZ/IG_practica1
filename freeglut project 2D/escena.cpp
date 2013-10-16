@@ -54,7 +54,7 @@ void __cdecl  escena::resize(int newWidth, int newHeight){
 	//Resize Viewport
 	WIDTH= newWidth;
 	HEIGHT= newHeight;
-
+	
 
 	GLdouble RatioViewPort= (float)WIDTH/(float)HEIGHT;
 	glViewport ( 0, 0, WIDTH, HEIGHT ) ;
@@ -144,5 +144,13 @@ escena* escena::getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble 
 		gluOrtho2D(xLeft,xRight,yBot,yTop);
 }
 	
-
-
+	
+	arbol escena::getArbol()
+	{
+		return arbol_pitagoras;
+	}
+	void escena::setArbol(arbol a)
+	{
+		arbol_pitagoras = a;
+	}
+	

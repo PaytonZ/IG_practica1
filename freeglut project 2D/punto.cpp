@@ -1,3 +1,5 @@
+
+
 #include "punto.h"
 
 punto& punto::operator = (const punto &p)

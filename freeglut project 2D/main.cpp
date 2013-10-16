@@ -23,7 +23,6 @@ int WIDTH= 1000, HEIGHT= 500;
 GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 250.0;
 
 
-controlador controlador ;
 
 
 //GLdouble xLeft= 0.0, xRight= 1280.0, yBot= 0.0, yTop= 1024.0;
@@ -70,30 +69,37 @@ void display(){
 	glEnd () ;
 	*/
 
-
+//Obtener mi centro
 	punto p=escena::getAVEInstance()->getCentro();
 		
 	glBegin(GL_POINTS);
 		glVertex2d(p.x,p.y);
 	glEnd();
-		
 	
 	cuadrado cuadradoprincipal;
+	GLdouble tam=50.0;
 
-	GLdouble tam=10.0;
-	cuadradoprincipal.esquina_inferior_izquierda.x=100.0;
-	cuadradoprincipal.esquina_inferior_izquierda.y=100.0;
+	
+	cuadradoprincipal.esquina_superior_izquierda.x=100.0;
+	cuadradoprincipal.esquina_superior_izquierda.y=100.0;
 
-	cuadradoprincipal.esquina_inferior_derecha.x=100.0+tam;
-	cuadradoprincipal.esquina_inferior_derecha.y=;
+	cuadradoprincipal.esquina_superior_derecha.x=cuadradoprincipal.esquina_superior_izquierda.x+tam;
+	cuadradoprincipal.esquina_superior_derecha.y=cuadradoprincipal.esquina_superior_izquierda.y;
+
+	cuadradoprincipal.esquina_inferior_izquierda.x=cuadradoprincipal.esquina_superior_izquierda.x;
+	cuadradoprincipal.esquina_inferior_izquierda.y=cuadradoprincipal.esquina_inferior_izquierda.y+tam;
+
+	cuadradoprincipal.esquina_inferior_derecha.x=cuadradoprincipal.esquina_superior_derecha.x;
+	cuadradoprincipal.esquina_inferior_derecha.y=cuadradoprincipal.esquina_inferior_derecha.y+tam;
+	
+	cuadradoprincipal.pintarCuadrado();
 
 
-	lapiz l;
 
-	l.turnTo(0.5);
 
-	l.forward(20,true);
-
+	//escena::getAVEInstance()->getArbol().pintaSiguienteNivel();
+	
+	
 
 
 	glFlush();
@@ -106,8 +112,11 @@ void display(){
 
 int main(int argc, char *argv[]){
 
-	std::cout<< "Starting ..." << std::endl;
+	//controlador controlador ;
 
+	std::cout<< "Starting ..." << std::endl;
+	
+	
 	//Inicializacion de mi AVE implementada con singleton
 	escena::getAVEInstance(xLeft,yBot,xRight,yTop);
 

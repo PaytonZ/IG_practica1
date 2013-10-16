@@ -59,10 +59,7 @@
     <ClInclude Include="arbol.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\TADs-EDA\Excepciones.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\TADs-EDA\Lista.h">
+    <ClInclude Include="Lista.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

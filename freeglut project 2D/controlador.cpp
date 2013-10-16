@@ -26,6 +26,8 @@ void controlador::key(unsigned char key, int x, int y){
 		escena::getAVEInstance()->escalacion(0.9);
 		break ;
 
+	case 'g' : escena::getAVEInstance()->getArbol().pintaSiguienteNivel(); break;
+
 	default:
 		need_redisplay = false;
 		break;

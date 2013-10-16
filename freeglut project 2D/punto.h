@@ -1,4 +1,7 @@
-#pragma once
+#ifndef PUNTO_H
+#define PUNTO_H
+
+
 
 #include <Windows.h>
 #include <gl/GL.h>
@@ -22,4 +25,4 @@ public:
 	punto& operator = (const punto &p);
 };
 
-
+#endif // !PUNTO_H

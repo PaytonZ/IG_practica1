@@ -15,6 +15,7 @@
 
 #include "Excepciones.h"
 #include <cassert>
+#include "cuadrado.h"
 
 /**
  Implementación del TAD Pila utilizando vectores dinámicos.
