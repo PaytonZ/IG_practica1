@@ -9,6 +9,8 @@
 
 #include "escena.h"
 #include "controlador.h"
+#include "lapiz.h"
+#include "cuadrado.h"
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -60,20 +62,39 @@ void display(){
 
 	glClear( GL_COLOR_BUFFER_BIT );
 
-	// Scene rendering
+	/*// Scene rendering
 	glBegin ( GL_TRIANGLES ) ;
 	glVertex2d( xTriangle, yTriangle );
 	glVertex2d( xTriangle + triangleWidth, yTriangle );
 	glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
 	glEnd () ;
-	
-	punto p=escena::getAVEInstance()->getCentro();
+	*/
 
-	
+
+	punto p=escena::getAVEInstance()->getCentro();
+		
 	glBegin(GL_POINTS);
 		glVertex2d(p.x,p.y);
 	glEnd();
 		
+	
+	cuadrado cuadradoprincipal;
+
+	GLdouble tam=10.0;
+	cuadradoprincipal.esquina_inferior_izquierda.x=100.0;
+	cuadradoprincipal.esquina_inferior_izquierda.y=100.0;
+
+	cuadradoprincipal.esquina_inferior_derecha.x=100.0+tam;
+	cuadradoprincipal.esquina_inferior_derecha.y=;
+
+
+	lapiz l;
+
+	l.turnTo(0.5);
+
+	l.forward(20,true);
+
+
 
 	glFlush();
 	glutSwapBuffers();

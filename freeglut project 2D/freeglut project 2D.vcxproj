@@ -120,6 +120,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="arbol.cpp" />
     <ClCompile Include="controlador.cpp" />
     <ClCompile Include="cuadrado.cpp" />
     <ClCompile Include="escena.cpp" />
@@ -129,8 +130,9 @@
     <ClCompile Include="maintest2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Practica1_TAIS\TADs-EDA\Excepciones.h" />
-    <ClInclude Include="..\..\Practica1_TAIS\TADs-EDA\Lista.h" />
+    <ClInclude Include="..\..\TADs-EDA\Excepciones.h" />
+    <ClInclude Include="..\..\TADs-EDA\Lista.h" />
+    <ClInclude Include="arbol.h" />
     <ClInclude Include="controlador.h" />
     <ClInclude Include="cuadrado.h" />
     <ClInclude Include="escena.h" />

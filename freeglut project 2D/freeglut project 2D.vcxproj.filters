@@ -36,6 +36,9 @@
     <ClCompile Include="lapiz.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="arbol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="escena.h">
@@ -47,16 +50,19 @@
     <ClInclude Include="controlador.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Practica1_TAIS\TADs-EDA\Lista.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Practica1_TAIS\TADs-EDA\Excepciones.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="cuadrado.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lapiz.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="arbol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\TADs-EDA\Excepciones.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\TADs-EDA\Lista.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
