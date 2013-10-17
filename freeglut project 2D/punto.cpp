@@ -1,4 +1,5 @@
 
+#include <math.h>
 
 #include "punto.h"
 
@@ -11,3 +12,8 @@ punto& punto::operator = (const punto &p)
     return *this;
 }
 
+GLdouble punto::distancia(punto p)
+{
+	return sqrt(pow((x - p.x),2.0)+
+			pow((y - p.y),2.0));
+}

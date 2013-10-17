@@ -26,8 +26,8 @@ void arbol::pintaSiguienteNivel()
 			
 		cuadrado izq, der;
 		
-		GLdouble tam_cuadrado = sqrt(pow((frontera.esquina_inferior_izquierda.x - frontera.esquina_inferior_derecha.x),2.0)+
-			pow((frontera.esquina_inferior_izquierda.y - frontera.esquina_inferior_derecha.y),2.0));
+		GLdouble tam_cuadrado = frontera.esquina_inferior_izquierda.distancia(frontera.esquina_inferior_derecha);
+			
 		tam_cuadrado=tam_cuadrado*1/2*sqrt(2);
 
 		

@@ -23,6 +23,8 @@ public:
 	void y(GLdouble);
 	*/
 	punto& operator = (const punto &p);
+	GLdouble distancia(punto);
+
 };
 
 #endif // !PUNTO_H
