@@ -1,6 +1,7 @@
 #include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
+#include <math.h> 
 
 #include <GL/freeglut.h>
 
@@ -14,7 +15,7 @@
 
 
 
-void cuadrado::pintarCuadrado()
+void  cuadrado::  pintarCuadrado() const
 {
 	//Sentido antihorario
 	glBegin(GL_QUADS);
@@ -26,4 +27,61 @@ void cuadrado::pintarCuadrado()
 
 	glEnd();
 
+}
+
+void cuadrado::creaCuadrado(GLdouble dir)
+{
+	lapiz a;
+	a.pos=esquina_inferior_izquierda;
+	a.dir=dir;
+	a.forward(distancia,false);
+	esquina_inferior_derecha=a.pos; // ESTO NO SE SI ESTARA BIEN, SI LO QUE HACE ES QUE EL PUNTERO DE ESTO APUNTE A A.POS ESTA MAL.
+	a.turnTo(90);
+	a.forward(distancia,false);
+	esquina_superior_derecha=a.pos;
+	a.turnTo(90);
+	direccion=a.dir;
+	a.forward(distancia,false);
+	esquina_superior_izquierda=a.pos;
+
+
+}
+
+void cuadrado:: crearCuadradoDerecha(GLdouble dir)
+{
+	lapiz a;
+	a.pos=esquina_inferior_derecha;
+	a.dir=dir;
+	a.forward(distancia,false);
+	esquina_superior_derecha=a.pos;
+	a.turnTo(90);
+	direccion=a.dir;
+	a.forward(distancia,false);
+	esquina_superior_izquierda=a.pos;
+	a.turnTo(90);
+	a.forward(distancia,false);
+	esquina_inferior_izquierda=a.pos;
+
+}
+
+cuadrado cuadrado:: dameCuadradoDerecho()
+{
+	GLint h=sqrt((distancia/2)*(distancia/2)*2);
+	cuadrado derecha(esquina_superior_derecha,h);
+	derecha.setEsquinaInferiorDerecha(esquina_superior_derecha);
+	derecha.crearCuadradoDerecha(direccion-135);
+	return derecha;
+}
+
+cuadrado cuadrado:: dameCuadradoIzquierdo()
+{
+	GLint h=sqrt((distancia/2)*(distancia/2)*2);
+	cuadrado izquierda(esquina_superior_izquierda,h);
+	izquierda.creaCuadrado(direccion-135);
+	return izquierda;
+}
+
+void cuadrado :: setEsquinaInferiorDerecha(punto a)
+{
+	esquina_inferior_derecha=a;
 }

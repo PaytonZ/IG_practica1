@@ -20,6 +20,9 @@
 		pos=p;
 
 	}
+
+
+
 	void lapiz::turnTo(GLdouble a)
 	{
 		dir+=a;

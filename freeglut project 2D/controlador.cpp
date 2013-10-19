@@ -26,7 +26,7 @@ void controlador::key(unsigned char key, int x, int y){
 		escena::getAVEInstance()->escalacion(0.9);
 		break ;
 
-	case 'g' : escena::getAVEInstance()->getArbol().pintaSiguienteNivel(); break;
+	case 'g' : escena::getAVEInstance()->arbol_pitagoras.draw(); break;
 
 	default:
 		need_redisplay = false;
@@ -34,7 +34,9 @@ void controlador::key(unsigned char key, int x, int y){
 	}//switch
 
 	if (need_redisplay)
-		glutPostRedisplay();
+		{
+			glutPostRedisplay();
+	}
 }
 
 void controlador::key(int key, int x, int y){

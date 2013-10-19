@@ -43,6 +43,9 @@ public:
 	arbol getArbol();
 	void setArbol(arbol);
 
+	void draw();
+
+	arbol arbol_pitagoras;
 
 
 private:
@@ -54,7 +57,7 @@ private:
 	static escena* AVE;
 	static void _AVE_deleter() { delete AVE; }
 
-	arbol arbol_pitagoras;
+	//arbol arbol_pitagoras;
 
 	GLdouble xLeft;
 	GLdouble xRight;

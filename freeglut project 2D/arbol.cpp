@@ -11,13 +11,13 @@ void arbol::pintaSiguienteNivel()
 	glClear( GL_COLOR_BUFFER_BIT );
 
 
-	Lista<cuadrado> fronteraAux;
+	//Lista<cuadrado> fronteraAux();
 	
 
 	Lista<cuadrado>::Iterador it = cuadradosFrontera.principio();
 	lapiz l;
 	
-	while(it != cuadradosFrontera.final())
+	/*while(it != cuadradosFrontera.final())
 	{
 		std::cout << "Entrando Bucle pintado cuadrados!" << std::endl;
 		cuadrado frontera= it.elem();
@@ -84,7 +84,7 @@ void arbol::pintaSiguienteNivel()
 	}
 	cuadradosFrontera=fronteraAux;
 	std::cout << "asddfffff!";
-	std::cout << cuadradosFrontera.numElems();
+	std::cout << cuadradosFrontera.numElems();*/
 
 	glFlush();
 	glutSwapBuffers();
@@ -102,3 +102,54 @@ void arbol::addCuadradoFrontera(cuadrado c)
 {
 
 }
+
+	void arbol:: draw()
+	{
+		if (cuadradosFrontera.esVacia()) // crea el primer cuadrado.
+		{
+			cuadrado a (punto(100,20),50.00);
+			a.creaCuadrado(0);
+			cuadradosFrontera.ponDr(a);
+			nivel=1;
+		}
+		else 
+		{
+			Lista<cuadrado>::Iterador it = cuadradosFrontera.principio();
+			int i= 0;
+			int numcuadrados= pow(2,nivel-1);
+			while(i!=numcuadrados)
+			{
+				cuadrado frontera= it.elem();
+				cuadradosFrontera.ponDr(frontera.dameCuadradoDerecho());
+				cuadradosFrontera.ponDr(frontera.dameCuadradoIzquierdo());
+				cuadradosArchivados.ponDr(cuadradosFrontera.primero());
+				it.avanza();
+				cuadradosFrontera.resto();
+				i++;
+			}
+			nivel++;
+		}
+
+		Lista<cuadrado>:: Iterador iter = cuadradosFrontera.principio();
+		Lista<cuadrado>:: Iterador iter2= cuadradosArchivados.principio();
+		while (iter!=cuadradosFrontera.final() || iter2!=cuadradosArchivados.final())
+		{
+			if (iter!=cuadradosFrontera.final() && iter2!=cuadradosArchivados.final())
+			{
+				iter.elem().pintarCuadrado();
+				iter.avanza();
+				iter2.elem().pintarCuadrado();
+				iter2.avanza();
+			}
+			else if (iter!=cuadradosFrontera.final())
+			{
+				iter.elem().pintarCuadrado();
+				iter.avanza();
+			}
+			else if (iter2!=cuadradosArchivados.final())
+			{
+				iter2.elem().pintarCuadrado();
+				iter2.avanza();
+			}
+		}
+	}

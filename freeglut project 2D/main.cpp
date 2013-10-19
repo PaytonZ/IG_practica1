@@ -24,7 +24,6 @@ GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 250.0;
 
 
 
-
 //GLdouble xLeft= 0.0, xRight= 1280.0, yBot= 0.0, yTop= 1024.0;
 
 // Scene variables
@@ -35,7 +34,7 @@ GLdouble triangleWidth= 100.0, triangleHeight= 50.0;
 void intitGL(){
 
 	glClearColor(1.0,1.0,1.0,1.0);
-	glColor3f(0.0,1.0,0.0); 
+	glColor3f(0.5,0.40,0.05); 
 
 	glPointSize(4.0);
 	glLineWidth(2.0);
@@ -76,7 +75,7 @@ void display(){
 		glVertex2d(p.x,p.y);
 	glEnd();
 	
-	cuadrado cuadradoprincipal;
+	/*cuadrado cuadradoprincipal;
 	GLdouble tam=50.0;
 
 	
@@ -92,14 +91,22 @@ void display(){
 	cuadradoprincipal.esquina_inferior_derecha.x=cuadradoprincipal.esquina_superior_derecha.x;
 	cuadradoprincipal.esquina_inferior_derecha.y=cuadradoprincipal.esquina_inferior_derecha.y+tam;
 	
-	cuadradoprincipal.pintarCuadrado();
+	cuadradoprincipal.pintarCuadrado();*/
 
 
 
 
-	//escena::getAVEInstance()->getArbol().pintaSiguienteNivel();
+	escena::getAVEInstance()->arbol_pitagoras.draw();
 	
 	
+	/*glBegin(GL_QUADS);
+
+		glVertex2d(100,10);
+		glVertex2d(150,10);
+		glVertex2d(150,60);
+		glVertex2d(100,60);
+
+	glEnd();*/
 
 
 	glFlush();

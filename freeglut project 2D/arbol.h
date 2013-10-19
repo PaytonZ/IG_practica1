@@ -15,7 +15,9 @@ public:
 
 	arbol(void):nivel(0) {
 	
-	cuadrado cuadradoprincipal;
+		cuadradosArchivados= Lista<cuadrado>();
+		cuadradosArchivados= Lista<cuadrado>();
+	/*cuadrado cuadradoprincipal;
 	GLdouble tam=50.0;
 
 	cuadradoprincipal.esquina_superior_izquierda.x=100.0;
@@ -32,7 +34,7 @@ public:
 
 	cuadradoprincipal.pintarCuadrado();
 
-	cuadradosFrontera.ponDr(cuadradoprincipal);
+	cuadradosFrontera.ponDr(cuadradoprincipal);*/
 
 
 	}
@@ -45,6 +47,7 @@ public:
 
 	void addCuadradoFrontera(cuadrado);
 	void addCuadradoArchivados(cuadrado);
+	void draw();
 
 };
 
