@@ -10,6 +10,7 @@ public:
 
 	static void key(unsigned char, int, int);
 	static void key(int, int, int);
+	static void key (int,int,int,int);
 
 
 

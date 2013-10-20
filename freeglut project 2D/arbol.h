@@ -48,6 +48,7 @@ public:
 	void addCuadradoFrontera(cuadrado);
 	void addCuadradoArchivados(cuadrado);
 	void draw();
+	void pintaCuadrados();
 
 };
 

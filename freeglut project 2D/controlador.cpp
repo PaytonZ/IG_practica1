@@ -68,3 +68,12 @@ void controlador::key(int key, int x, int y){
 	if (need_redisplay)
 		glutPostRedisplay();
 }
+
+void controlador:: key(int button, int state, int x, int y)
+{
+
+	if (button=0)
+	{
+		GLdouble escalaAncho;
+	}
+}

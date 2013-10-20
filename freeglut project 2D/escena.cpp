@@ -160,3 +160,4 @@ escena* escena::getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble 
 		arbol_pitagoras.draw();
 	}
 	
+	

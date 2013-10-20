@@ -109,6 +109,9 @@ void arbol::addCuadradoFrontera(cuadrado c)
 		{
 			cuadrado a (punto(100,20),50.00);
 			a.creaCuadrado(0);
+			a.setRed(0.5);
+			a.setBlue(0.05);
+			a.setGreen(0.40);
 			cuadradosFrontera.ponDr(a);
 			nivel=1;
 		}
@@ -130,6 +133,11 @@ void arbol::addCuadradoFrontera(cuadrado c)
 			nivel++;
 		}
 
+		
+	}
+
+	void arbol:: pintaCuadrados()
+	{
 		Lista<cuadrado>:: Iterador iter = cuadradosFrontera.principio();
 		Lista<cuadrado>:: Iterador iter2= cuadradosArchivados.principio();
 		while (iter!=cuadradosFrontera.final() || iter2!=cuadradosArchivados.final())

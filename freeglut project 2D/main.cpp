@@ -71,9 +71,9 @@ void display(){
 //Obtener mi centro
 	punto p=escena::getAVEInstance()->getCentro();
 		
-	glBegin(GL_POINTS);
+	/*glBegin(GL_POINTS);
 		glVertex2d(p.x,p.y);
-	glEnd();
+	glEnd();*/
 	
 	/*cuadrado cuadradoprincipal;
 	GLdouble tam=50.0;
@@ -96,7 +96,7 @@ void display(){
 
 
 
-	escena::getAVEInstance()->arbol_pitagoras.draw();
+	escena::getAVEInstance()->arbol_pitagoras.pintaCuadrados();
 	
 	
 	/*glBegin(GL_QUADS);
@@ -141,6 +141,7 @@ int main(int argc, char *argv[]){
 	//Callback registration
 	glutReshapeFunc(escena::resize);
 	glutKeyboardFunc(controlador::key);
+	glutMouseFunc(controlador::key);
 	glutSpecialFunc(controlador::key);
 	glutDisplayFunc(display);
 

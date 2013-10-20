@@ -17,6 +17,7 @@
 
 void  cuadrado::  pintarCuadrado() const
 {
+	glColor3f(red,green,blue);
 	//Sentido antihorario
 	glBegin(GL_QUADS);
 
@@ -70,6 +71,18 @@ cuadrado cuadrado:: dameCuadradoDerecho()
 	cuadrado derecha(esquina_superior_derecha,h);
 	derecha.setEsquinaInferiorDerecha(esquina_superior_derecha);
 	derecha.crearCuadradoDerecha(direccion-135);
+	if (red!=0)
+		derecha.setRed(red-0.1);
+	else
+		derecha.setRed(0);
+	if (green!=1)
+		derecha.setGreen(green+0.1);
+	else 
+		derecha.setGreen(1);
+	if (blue!=0)
+		derecha.setBlue(blue-0.01);
+	else
+		derecha.setBlue(0);
 	return derecha;
 }
 
@@ -78,10 +91,37 @@ cuadrado cuadrado:: dameCuadradoIzquierdo()
 	GLint h=sqrt((distancia/2)*(distancia/2)*2);
 	cuadrado izquierda(esquina_superior_izquierda,h);
 	izquierda.creaCuadrado(direccion-135);
+	if (red!=0)
+		izquierda.setRed(red-0.1);
+	else
+		izquierda.setRed(0);
+	if (green!=1)
+		izquierda.setGreen(green+0.1);
+	else 
+		izquierda.setGreen(1);
+	if (blue!=0)
+		izquierda.setBlue(blue-0.01);
+	else
+		izquierda.setBlue(0);
 	return izquierda;
 }
 
 void cuadrado :: setEsquinaInferiorDerecha(punto a)
 {
 	esquina_inferior_derecha=a;
+}
+
+void cuadrado :: setRed(GLdouble colorred)
+{
+	red=colorred;
+}
+
+void cuadrado :: setBlue (GLdouble colorblue)
+{
+	blue=colorblue;
+}
+
+void cuadrado :: setGreen (GLdouble colorgreen)
+{
+	green=colorgreen;
 }

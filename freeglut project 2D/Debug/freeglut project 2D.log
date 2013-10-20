@@ -1,11 +1,9 @@
-﻿Compilación iniciada a las 20/10/2013 0:02:44.
+﻿Compilación iniciada a las 20/10/2013 20:11:07.
      1>Proyecto "C:\Users\David\Documents\GitHub\IG_practica1\freeglut project 2D\freeglut project 2D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\David\Documents\GitHub\IG_practica1\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt cuadrado.cpp
-         cuadrado.cpp
-     1>c:\users\david\documents\github\ig_practica1\freeglut project 2d\cuadrado.cpp(30): warning C4305: 'argumento' : truncamiento de 'double' a 'GLfloat'
-     1>c:\users\david\documents\github\ig_practica1\freeglut project 2d\cuadrado.cpp(71): warning C4244: 'inicializando' : conversión de 'double' a 'GLint'; posible pérdida de datos
-     1>c:\users\david\documents\github\ig_practica1\freeglut project 2d\cuadrado.cpp(80): warning C4244: 'inicializando' : conversión de 'double' a 'GLint'; posible pérdida de datos
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\David\Documents\GitHub\IG_practica1\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt controlador.cpp
+         controlador.cpp
+     1>c:\users\david\documents\github\ig_practica1\freeglut project 2d\controlador.cpp(77): warning C4101: 'escalaAncho' : variable local sin referencia
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\David\Documents\GitHub\IG_practica1\Debug\practica 1 IG.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\David\Documents\GitHub\IG_practica1\freeglut\lib\ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\David\Documents\GitHub\IG_practica1\Debug\practica 1 IG.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\David\Documents\GitHub\IG_practica1\Debug\practica 1 IG.lib" /MACHINE:X86 Debug\arbol.obj
          Debug\controlador.obj
@@ -20,4 +18,4 @@
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:02.02
+Tiempo transcurrido 00:00:02.22
