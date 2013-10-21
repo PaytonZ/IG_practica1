@@ -8,90 +8,11 @@
 void arbol::pintaSiguienteNivel()
 {
 
-	glClear( GL_COLOR_BUFFER_BIT );
-
-
-	//Lista<cuadrado> fronteraAux();
-	
-
-	Lista<cuadrado>::Iterador it = cuadradosFrontera.principio();
-	lapiz l;
-	
-	/*while(it != cuadradosFrontera.final())
-	{
-		std::cout << "Entrando Bucle pintado cuadrados!" << std::endl;
-		cuadrado frontera= it.elem();
-
-		
-			
-		cuadrado izq, der;
-		
-		GLdouble tam_cuadrado = frontera.esquina_inferior_izquierda.distancia(frontera.esquina_inferior_derecha);
-			
-		tam_cuadrado=tam_cuadrado*1/2*sqrt(2);
-
-		
-		izq.esquina_inferior_derecha=frontera.esquina_superior_izquierda;
-
-		l.moveTo(frontera.esquina_superior_izquierda,false);
-
-		l.turnTo(135);
-		l.forward(tam_cuadrado,false);
-
-		izq.esquina_inferior_izquierda=l.pos;
-
-		l.turnTo(-90);
-		l.forward(tam_cuadrado,false);
-
-		izq.esquina_superior_izquierda=l.pos;
-
-		l.turnTo(-90);
-		l.forward(tam_cuadrado,false);
-		
-		izq.esquina_superior_derecha=l.pos;
-
-		l.dir=0.0;
-		
-		der.esquina_inferior_derecha=frontera.esquina_superior_derecha;
-
-		l.moveTo(frontera.esquina_superior_derecha,false);
-
-		l.turnTo(135);
-		l.forward(tam_cuadrado,false);
-
-		der.esquina_inferior_izquierda=l.pos;
-
-		l.turnTo(-90);
-		l.forward(tam_cuadrado,false);
-
-		der.esquina_superior_izquierda=l.pos;
-
-		l.turnTo(-90);
-		l.forward(tam_cuadrado,false);
-		
-		der.esquina_superior_derecha=l.pos;
-
-		izq.pintarCuadrado();
-		der.pintarCuadrado();
-
-		fronteraAux.ponDr(izq);
-		fronteraAux.ponDr(der);
-
-		cuadradosArchivados.ponDr(frontera);
-		
-		it=cuadradosFrontera.borra(it);
-		it.avanza();
-	}
-	cuadradosFrontera=fronteraAux;
-	std::cout << "asddfffff!";
-	std::cout << cuadradosFrontera.numElems();*/
-
-	glFlush();
-	glutSwapBuffers();
-
 
 
 }
+
+
 void arbol::addCuadradoFrontera(cuadrado c)
 {
 	cuadradosFrontera.ponDr(c);
@@ -109,6 +30,9 @@ void arbol::addCuadradoFrontera(cuadrado c)
 		{
 			cuadrado a (punto(100,20),50.00);
 			a.creaCuadrado(0);
+			a.setRed(0.5);
+			a.setBlue(0.05);
+			a.setGreen(0.40);
 			cuadradosFrontera.ponDr(a);
 			nivel=1;
 		}
@@ -130,6 +54,11 @@ void arbol::addCuadradoFrontera(cuadrado c)
 			nivel++;
 		}
 
+		
+	}
+
+	void arbol:: pintaCuadrados()
+	{
 		Lista<cuadrado>:: Iterador iter = cuadradosFrontera.principio();
 		Lista<cuadrado>:: Iterador iter2= cuadradosArchivados.principio();
 		while (iter!=cuadradosFrontera.final() || iter2!=cuadradosArchivados.final())
@@ -153,3 +82,32 @@ void arbol::addCuadradoFrontera(cuadrado c)
 			}
 		}
 	}
+
+	 void arbol::addCuadradoInicial(punto p ,GLdouble tam)
+	 {
+		
+		 if(cuadradosFrontera.esVacia())
+		{ lapiz l;
+		
+		 l.dir=225;
+		 
+		 l.moveTo(p,false);
+		 l.forward((sqrt(2)*(tam/2.0))/2.0,false);
+		 cuadrado a(l.pos,50.0);
+		 a.creaCuadrado(0);
+		 a.setRed(0.5);
+		a.setBlue(0.05);
+		a.setGreen(0.40);
+
+		 cuadradosFrontera.ponDr(a);
+		 nivel=1;
+		 a.pintarCuadrado();
+
+		 std::cout << cuadradosFrontera.numElems() << std::endl;
+		  
+		 }
+
+
+
+
+	 }

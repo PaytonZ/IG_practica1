@@ -7,6 +7,8 @@
 #include "escena.h"
 
 
+extern int WIDTH, HEIGHT;
+
 
 void controlador::key(unsigned char key, int x, int y){
 
@@ -26,7 +28,7 @@ void controlador::key(unsigned char key, int x, int y){
 		escena::getAVEInstance()->escalacion(0.9);
 		break ;
 
-	case 'g' : escena::getAVEInstance()->arbol_pitagoras.draw(); break;
+	case 'g' : escena::getAVEInstance()->arbol_pitagoras->draw(); break;
 
 	default:
 		need_redisplay = false;
@@ -67,4 +69,38 @@ void controlador::key(int key, int x, int y){
 
 	if (need_redisplay)
 		glutPostRedisplay();
+}
+
+void controlador:: key(int button, int state, int x, int y)
+{
+
+	bool need_redisplay = true;
+
+	switch(button)
+	{
+	case GLUT_LEFT_BUTTON:
+		if(state==GLUT_UP)
+		{
+			escena *escena = escena::getAVEInstance();
+		
+			GLdouble escalaAncho= WIDTH / ( escena->getxRight() -escena->getxLeft() );
+
+			GLdouble escalaAlto = HEIGHT / (escena->getyTop() - escena->getyBot()); 
+
+			punto nuevo;
+			nuevo.x=(x/escalaAncho) + escena->getxLeft();
+			nuevo.y=(y/escalaAlto) + escena->getyBot();
+
+			escena->arbol_pitagoras->addCuadradoInicial(nuevo,100);
+			std::cout << escena->arbol_pitagoras->cuadradosFrontera.numElems();
+
+		}
+
+		break;
+	}
+	if (need_redisplay)
+		{
+			glutPostRedisplay();
+	}
+
 }

@@ -145,18 +145,19 @@ escena* escena::getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble 
 }
 	
 	
-	arbol escena::getArbol()
+	arbol* escena::getArbol()
 	{
 		return  arbol_pitagoras;
 ;
 	}
-	void escena::setArbol(arbol a)
+	void escena::setArbol(arbol* a)
 	{
 		arbol_pitagoras = a;
 	}
 
 	void escena:: draw()
 	{
-		arbol_pitagoras.draw();
+		arbol_pitagoras->draw();
 	}
+	
 	
