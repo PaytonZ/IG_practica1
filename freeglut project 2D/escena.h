@@ -40,19 +40,22 @@ public:
 	void translacionY(GLdouble);
 	void escalacion(GLdouble);
 
-	arbol getArbol();
-	void setArbol(arbol);
+	arbol* getArbol();
+	void setArbol(arbol*);
 
 	void draw();
 
-	arbol arbol_pitagoras;
+	arbol *arbol_pitagoras;
 
 
 private:
 
 	escena() {}
 	escena(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop):
-		xLeft(new_xleft) , xRight(new_xright) ,  yBot(new_yBot) , yTop(new_yTop) {}
+		xLeft(new_xleft) , xRight(new_xright) ,  yBot(new_yBot) , yTop(new_yTop) {
+			arbol_pitagoras = new arbol();
+		
+	}
 
 	static escena* AVE;
 	static void _AVE_deleter() { delete AVE; }
