@@ -72,6 +72,7 @@ cuadrado cuadrado:: dameCuadradoDerecho()
 	derecha.setEsquinaInferiorDerecha(esquina_superior_derecha);
 	derecha.crearCuadradoDerecha(direccion-135);
 	if (red!=0)
+<<<<<<< HEAD
 		derecha.setRed(red-0.005);
 	else
 		derecha.setRed(0);
@@ -81,6 +82,17 @@ cuadrado cuadrado:: dameCuadradoDerecho()
 		derecha.setGreen(1);
 	if (blue!=0)
 		derecha.setBlue(blue-0.005);
+=======
+		derecha.setRed(red-0.1);
+	else
+		derecha.setRed(0);
+	if (green!=1)
+		derecha.setGreen(green+0.1);
+	else 
+		derecha.setGreen(1);
+	if (blue!=0)
+		derecha.setBlue(blue-0.01);
+>>>>>>> 5deea40d5f70b2a4e8c138d32bdf0b5006e81b70
 	else
 		derecha.setBlue(0);
 	return derecha;
