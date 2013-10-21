@@ -74,6 +74,10 @@ void controlador::key(int key, int x, int y){
 void controlador:: key(int button, int state, int x, int y)
 {
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ded47e05e2e5d296f34ee78f56bf84a6ca2a21f2
 	bool need_redisplay = true;
 
 	switch(button)
@@ -103,4 +107,13 @@ void controlador:: key(int button, int state, int x, int y)
 			glutPostRedisplay();
 	}
 
+<<<<<<< HEAD
+=======
+=======
+	if (button=0)
+	{
+		GLdouble escalaAncho;
+	}
+>>>>>>> 5deea40d5f70b2a4e8c138d32bdf0b5006e81b70
+>>>>>>> ded47e05e2e5d296f34ee78f56bf84a6ca2a21f2
 }
