@@ -12,11 +12,13 @@ public:
 
 	Lista<cuadrado> cuadradosArchivados;
 	Lista<cuadrado> cuadradosFrontera;
+	Lista< Lista<cuadrado> *> cuadrados;
 
 	arbol(void):nivel(0) {
 	
 		cuadradosArchivados= Lista<cuadrado>();
 		cuadradosArchivados= Lista<cuadrado>();
+		cuadrados = Lista< Lista<cuadrado> *>();
 	
 	}
 
@@ -31,6 +33,18 @@ public:
 	void draw();
 	void pintaCuadrados();
 	void addCuadradoInicial(punto,GLdouble);
+	void quitaUnNivel();
+
+		void  liberarArbol()
+		 {
+			 Lista<Lista <cuadrado> *> :: Iterador it = cuadrados.principio();
+			 while(it!=cuadrados.final())
+			 {
+				 Lista<cuadrado>* l= it.elem();
+				 it.avanza();
+				 delete l;
+			 }
+		 }
 
 };
 

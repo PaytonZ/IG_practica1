@@ -128,6 +128,8 @@ int main(int argc, char *argv[]){
 	// Classic glut's main loop can be stopped in freeglut using (*)
 	glutMainLoop(); 
 
+	escena::getAVEInstance()->arbol_pitagoras->liberarArbol();
+
 	// We would never reach this point using classic glut
 	system("PAUSE"); 
 

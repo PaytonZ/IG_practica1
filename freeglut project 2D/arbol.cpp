@@ -26,13 +26,13 @@ void arbol::addCuadradoFrontera(cuadrado c)
 
 	void arbol:: draw()
 	{
-		if (cuadradosFrontera.esVacia()) // crea el primer cuadrado.
+		/*if (cuadradosFrontera.esVacia()) // crea el primer cuadrado.
 		{
 			cuadrado a (punto(100,20),50.00);
 			a.creaCuadrado(0);
 			a.setRed(0.5);
 			a.setBlue(0.05);
-			a.setGreen(0.40);
+			a.setGreen(0.35);
 			cuadradosFrontera.ponDr(a);
 			nivel=1;
 		}
@@ -52,14 +52,55 @@ void arbol::addCuadradoFrontera(cuadrado c)
 				i++;
 			}
 			nivel++;
+		}*/
+		if (cuadrados.esVacia())
+		{
+			cuadrado a (punto(100,20),50.00);
+			a.creaCuadrado(0);
+			a.setRed(0.5);
+			a.setBlue(0.05);
+			a.setGreen(0.35);
+			Lista<cuadrado> * lista = new Lista<cuadrado>();
+			lista->ponDr(a);
+			cuadrados.ponDr(lista);
+			nivel=1;
 		}
+		else
+		{
+			Lista<cuadrado> * nuevaLista = new Lista<cuadrado>();
+			Lista<Lista<cuadrado>*> :: Iterador it= cuadrados.principio();
+			for (int i=0; i<cuadrados.numElems()-1;i++)
+				it.avanza();
+			Lista<cuadrado> asd = *it.elem();
+			Lista<cuadrado> :: Iterador at= asd.principio();
+			while(at!=asd.final())
+			{
+				cuadrado frontera= at.elem();
+				nuevaLista->ponDr(frontera.dameCuadradoDerecho());
+				nuevaLista->ponDr(frontera.dameCuadradoIzquierdo());
+				at.avanza();
+			}
+			nivel++;
+			cuadrados.ponDr(nuevaLista);
+		}
+
 
 		
 	}
 
+	void arbol:: quitaUnNivel()
+	{
+		if (!cuadrados.esVacia())
+		{
+			cuadrados.inicio();
+			nivel--;
+		}
+
+	}
+
 	void arbol:: pintaCuadrados()
 	{
-		Lista<cuadrado>:: Iterador iter = cuadradosFrontera.principio();
+		/*Lista<cuadrado>:: Iterador iter = cuadradosFrontera.principio();
 		Lista<cuadrado>:: Iterador iter2= cuadradosArchivados.principio();
 		while (iter!=cuadradosFrontera.final() || iter2!=cuadradosArchivados.final())
 		{
@@ -80,13 +121,27 @@ void arbol::addCuadradoFrontera(cuadrado c)
 				iter2.elem().pintarCuadrado();
 				iter2.avanza();
 			}
+		}*/
+
+		Lista<Lista<cuadrado>*> :: Iterador it= cuadrados.principio();
+		while(it!=cuadrados.final())
+		{
+			Lista<cuadrado> asd = *it.elem();
+			Lista<cuadrado> :: Iterador at = asd.principio();
+			while(at!=asd.final())
+			{
+				at.elem().pintarCuadrado();
+				at.avanza();
+			}
+			it.avanza();
 		}
+
 	}
 
 	 void arbol::addCuadradoInicial(punto p ,GLdouble tam)
 	 {
 		
-		 if(cuadradosFrontera.esVacia())
+		/* if(cuadradosFrontera.esVacia())
 		{ lapiz l;
 		
 		 l.dir=225;
@@ -97,7 +152,7 @@ void arbol::addCuadradoFrontera(cuadrado c)
 		 a.creaCuadrado(0);
 		 a.setRed(0.5);
 		a.setBlue(0.05);
-		a.setGreen(0.40);
+		a.setGreen(0.35);
 
 		 cuadradosFrontera.ponDr(a);
 		 nivel=1;
@@ -105,9 +160,27 @@ void arbol::addCuadradoFrontera(cuadrado c)
 
 		 std::cout << cuadradosFrontera.numElems() << std::endl;
 		  
+		 }*/
+
+		 if (cuadrados.esVacia())
+		 {
+				lapiz l;		
+				l.dir=225;
+		 		l.moveTo(p,false);
+				l.forward((sqrt(2)*(tam/2.0))/2.0,false);
+				cuadrado a(l.pos,50.0);
+				a.creaCuadrado(0);
+				a.setRed(0.5);
+				a.setBlue(0.05);
+				a.setGreen(0.35);
+				Lista<cuadrado> *abc=new Lista<cuadrado>();
+				abc->ponDr(a);
+				cuadrados.ponDr(abc);
+				a.pintarCuadrado();
+
 		 }
 
-
-
-
 	 }
+
+
+	  

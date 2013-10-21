@@ -30,6 +30,8 @@ void controlador::key(unsigned char key, int x, int y){
 
 	case 'g' : escena::getAVEInstance()->arbol_pitagoras->draw(); break;
 
+	case 'h' : escena::getAVEInstance()->arbol_pitagoras->quitaUnNivel(); break;
+
 	default:
 		need_redisplay = false;
 		break;
@@ -81,19 +83,9 @@ void controlador:: key(int button, int state, int x, int y)
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_UP)
 		{
-			escena *escena = escena::getAVEInstance();
+
+			escena::getAVEInstance()->arbol_pitagoras->addCuadradoInicial(escena::getAVEInstance()->dePuertodeVistaaAVE(x,y),100);
 		
-			GLdouble escalaAncho= WIDTH / ( escena->getxRight() -escena->getxLeft() );
-
-			GLdouble escalaAlto = HEIGHT / (escena->getyTop() - escena->getyBot()); 
-
-			punto nuevo;
-			nuevo.x= (x/escalaAncho) + escena->getxLeft();
-			nuevo.y= escena->getyTop() - (y/escalaAlto) ;
-
-			escena->arbol_pitagoras->addCuadradoInicial(nuevo,100);
-			std::cout << escena->arbol_pitagoras->cuadradosFrontera.numElems();
-
 		}
 
 		break;
