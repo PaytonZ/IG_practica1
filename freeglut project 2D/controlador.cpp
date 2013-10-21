@@ -74,6 +74,13 @@ void controlador::key(int key, int x, int y){
 void controlador:: key(int button, int state, int x, int y)
 {
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ded47e05e2e5d296f34ee78f56bf84a6ca2a21f2
+>>>>>>> 9fd1f27fcf753cb90eb51381b14b69b5acebbe7a
 	bool need_redisplay = true;
 
 	switch(button)
@@ -88,8 +95,13 @@ void controlador:: key(int button, int state, int x, int y)
 			GLdouble escalaAlto = HEIGHT / (escena->getyTop() - escena->getyBot()); 
 
 			punto nuevo;
+<<<<<<< HEAD
 			nuevo.x= (x/escalaAncho) + escena->getxLeft();
 			nuevo.y= escena->getyTop() - (y/escalaAlto) ;
+=======
+			nuevo.x=(x/escalaAncho) + escena->getxLeft();
+			nuevo.y=(y/escalaAlto) + escena->getyBot();
+>>>>>>> 9fd1f27fcf753cb90eb51381b14b69b5acebbe7a
 
 			escena->arbol_pitagoras->addCuadradoInicial(nuevo,100);
 			std::cout << escena->arbol_pitagoras->cuadradosFrontera.numElems();
@@ -103,4 +115,16 @@ void controlador:: key(int button, int state, int x, int y)
 			glutPostRedisplay();
 	}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+	if (button=0)
+	{
+		GLdouble escalaAncho;
+	}
+>>>>>>> 5deea40d5f70b2a4e8c138d32bdf0b5006e81b70
+>>>>>>> ded47e05e2e5d296f34ee78f56bf84a6ca2a21f2
+>>>>>>> 9fd1f27fcf753cb90eb51381b14b69b5acebbe7a
 }

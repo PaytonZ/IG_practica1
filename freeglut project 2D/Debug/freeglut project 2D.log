@@ -1,8 +1,33 @@
+<<<<<<< HEAD
 ﻿Compilación iniciada a las 21/10/2013 14:41:57.
      1>Proyecto "C:\hlocal\IG_practica1\freeglut project 2D\freeglut project 2D.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\software\programacion\MSVStudio2012\VC\bin\CL.exe /c /IC:\hlocal\IG_practica1\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt controlador.cpp
          controlador.cpp
+=======
+<<<<<<< HEAD
+﻿Compilación iniciada a las 21/10/2013 14:29:55.
+     1>Proyecto "C:\hlocal\IG_practica1\freeglut project 2D\freeglut project 2D.vcxproj" en el nodo 2 (Build destinos).
+     1>ClCompile:
+         C:\software\programacion\MSVStudio2012\VC\bin\CL.exe /c /IC:\hlocal\IG_practica1\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt controlador.cpp
+         controlador.cpp
+=======
+<<<<<<< HEAD
+﻿Compilación iniciada a las 21/10/2013 14:29:55.
+     1>Proyecto "C:\hlocal\IG_practica1\freeglut project 2D\freeglut project 2D.vcxproj" en el nodo 2 (Build destinos).
+     1>ClCompile:
+         C:\software\programacion\MSVStudio2012\VC\bin\CL.exe /c /IC:\hlocal\IG_practica1\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt controlador.cpp
+         controlador.cpp
+=======
+﻿Compilación iniciada a las 20/10/2013 20:11:07.
+     1>Proyecto "C:\Users\David\Documents\GitHub\IG_practica1\freeglut project 2D\freeglut project 2D.vcxproj" en el nodo 2 (Build destinos).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /IC:\Users\David\Documents\GitHub\IG_practica1\freeglut\include\ /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt controlador.cpp
+         controlador.cpp
+     1>c:\users\david\documents\github\ig_practica1\freeglut project 2d\controlador.cpp(77): warning C4101: 'escalaAncho' : variable local sin referencia
+>>>>>>> 5deea40d5f70b2a4e8c138d32bdf0b5006e81b70
+>>>>>>> ded47e05e2e5d296f34ee78f56bf84a6ca2a21f2
+>>>>>>> 9fd1f27fcf753cb90eb51381b14b69b5acebbe7a
        Link:
          C:\software\programacion\MSVStudio2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\hlocal\IG_practica1\Debug\practica 1 IG.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\hlocal\IG_practica1\freeglut\lib\ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\hlocal\IG_practica1\Debug\practica 1 IG.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\hlocal\IG_practica1\Debug\practica 1 IG.lib" /MACHINE:X86 Debug\arbol.obj
          Debug\controlador.obj
@@ -17,4 +42,16 @@
 
 Compilación correcta.
 
+<<<<<<< HEAD
 Tiempo transcurrido 00:00:01.34
+=======
+<<<<<<< HEAD
+Tiempo transcurrido 00:00:01.05
+=======
+<<<<<<< HEAD
+Tiempo transcurrido 00:00:01.05
+=======
+Tiempo transcurrido 00:00:02.22
+>>>>>>> 5deea40d5f70b2a4e8c138d32bdf0b5006e81b70
+>>>>>>> ded47e05e2e5d296f34ee78f56bf84a6ca2a21f2
+>>>>>>> 9fd1f27fcf753cb90eb51381b14b69b5acebbe7a

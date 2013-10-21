@@ -110,4 +110,12 @@ void arbol::addCuadradoFrontera(cuadrado c)
 
 
 
+<<<<<<< HEAD
 	 }
+=======
+<<<<<<< HEAD
+	 }
+=======
+	 }
+>>>>>>> ded47e05e2e5d296f34ee78f56bf84a6ca2a21f2
+>>>>>>> 9fd1f27fcf753cb90eb51381b14b69b5acebbe7a
