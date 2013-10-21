@@ -60,53 +60,18 @@ void display(){
 
 	glClear( GL_COLOR_BUFFER_BIT );
 
-	/*// Scene rendering
-	glBegin ( GL_TRIANGLES ) ;
-	glVertex2d( xTriangle, yTriangle );
-	glVertex2d( xTriangle + triangleWidth, yTriangle );
-	glVertex2d( xTriangle + triangleWidth, yTriangle + triangleHeight );
-	glEnd () ;
-	*/
 
 //Obtener mi centro
 	punto p=escena::getAVEInstance()->getCentro();
 		
-	glBegin(GL_POINTS);
+	/*glBegin(GL_POINTS);
 		glVertex2d(p.x,p.y);
-	glEnd();
-	
-	/*cuadrado cuadradoprincipal;
-	GLdouble tam=50.0;
-
-	
-	cuadradoprincipal.esquina_superior_izquierda.x=100.0;
-	cuadradoprincipal.esquina_superior_izquierda.y=100.0;
-
-	cuadradoprincipal.esquina_superior_derecha.x=cuadradoprincipal.esquina_superior_izquierda.x+tam;
-	cuadradoprincipal.esquina_superior_derecha.y=cuadradoprincipal.esquina_superior_izquierda.y;
-
-	cuadradoprincipal.esquina_inferior_izquierda.x=cuadradoprincipal.esquina_superior_izquierda.x;
-	cuadradoprincipal.esquina_inferior_izquierda.y=cuadradoprincipal.esquina_inferior_izquierda.y+tam;
-
-	cuadradoprincipal.esquina_inferior_derecha.x=cuadradoprincipal.esquina_superior_derecha.x;
-	cuadradoprincipal.esquina_inferior_derecha.y=cuadradoprincipal.esquina_inferior_derecha.y+tam;
-	
-	cuadradoprincipal.pintarCuadrado();*/
-
-
-
-
-	escena::getAVEInstance()->arbol_pitagoras.draw();
-	
-	
-	/*glBegin(GL_QUADS);
-
-		glVertex2d(100,10);
-		glVertex2d(150,10);
-		glVertex2d(150,60);
-		glVertex2d(100,60);
-
 	glEnd();*/
+	
+
+	escena::getAVEInstance()->arbol_pitagoras->pintaCuadrados();
+	
+	
 
 
 	glFlush();
@@ -129,6 +94,8 @@ int main(int argc, char *argv[]){
 
 	int my_window; //my window's identifier
 
+	
+
 	//Initialization
 	glutInitWindowSize(WIDTH, HEIGHT);
 	glutInitWindowPosition (140, 140);
@@ -141,6 +108,7 @@ int main(int argc, char *argv[]){
 	//Callback registration
 	glutReshapeFunc(escena::resize);
 	glutKeyboardFunc(controlador::key);
+	glutMouseFunc(controlador::key);
 	glutSpecialFunc(controlador::key);
 	glutDisplayFunc(display);
 

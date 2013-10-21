@@ -17,26 +17,7 @@ public:
 	
 		cuadradosArchivados= Lista<cuadrado>();
 		cuadradosArchivados= Lista<cuadrado>();
-	/*cuadrado cuadradoprincipal;
-	GLdouble tam=50.0;
-
-	cuadradoprincipal.esquina_superior_izquierda.x=100.0;
-	cuadradoprincipal.esquina_superior_izquierda.y=100.0;
-
-	cuadradoprincipal.esquina_superior_derecha.x=cuadradoprincipal.esquina_superior_izquierda.x+tam;
-	cuadradoprincipal.esquina_superior_derecha.y=cuadradoprincipal.esquina_superior_izquierda.y;
-
-	cuadradoprincipal.esquina_inferior_izquierda.x=cuadradoprincipal.esquina_superior_izquierda.x;
-	cuadradoprincipal.esquina_inferior_izquierda.y=cuadradoprincipal.esquina_inferior_izquierda.y+tam;
-
-	cuadradoprincipal.esquina_inferior_derecha.x=cuadradoprincipal.esquina_superior_derecha.x;
-	cuadradoprincipal.esquina_inferior_derecha.y=cuadradoprincipal.esquina_inferior_derecha.y+tam;
-
-	cuadradoprincipal.pintarCuadrado();
-
-	cuadradosFrontera.ponDr(cuadradoprincipal);*/
-
-
+	
 	}
 
 
@@ -48,6 +29,8 @@ public:
 	void addCuadradoFrontera(cuadrado);
 	void addCuadradoArchivados(cuadrado);
 	void draw();
+	void pintaCuadrados();
+	void addCuadradoInicial(punto,GLdouble);
 
 };
 

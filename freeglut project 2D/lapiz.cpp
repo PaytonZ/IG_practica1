@@ -34,18 +34,20 @@
 		nuevo_punto.x= pos.x + dist*cos(M_PI*dir/180.0);
 		nuevo_punto.y= pos.y + dist*sin(M_PI*dir/180.0);
 		
-		glClear( GL_COLOR_BUFFER_BIT );
+		
 		
 		if(draw)
 		{
+		glClear( GL_COLOR_BUFFER_BIT );
 			 glBegin(GL_LINES);
 				glVertex2d(pos.x, pos.y);
 				glVertex2d(nuevo_punto.x, nuevo_punto.y);
          glEnd();
+		 glFlush();
+		glutSwapBuffers();
 		}
 		pos=nuevo_punto;
 
-	glFlush();
-	glutSwapBuffers();
+	
 
 	}
