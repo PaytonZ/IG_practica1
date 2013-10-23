@@ -7,7 +7,7 @@
 #include "escena.h"
 
 
-extern int WIDTH, HEIGHT;
+extern int WIDTH, HEIGHT, TAM_CUADRADO;
 
 
 void controlador::key(unsigned char key, int x, int y){
@@ -83,12 +83,19 @@ void controlador:: key(int button, int state, int x, int y)
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_UP)
 		{
+			if(escena::getAVEInstance()->arbol_pitagoras->cuadrados.esVacia())
+				escena::getAVEInstance()->arbol_pitagoras->addCuadradoInicial(escena::getAVEInstance()->dePuertodeVistaaAVE(x,y),TAM_CUADRADO);
+			else
+			{
 
-			escena::getAVEInstance()->arbol_pitagoras->addCuadradoInicial(escena::getAVEInstance()->dePuertodeVistaaAVE(x,y),100);
+			}
 		
+			
 		}
 
 		break;
+		case GLUT_RIGHT_BUTTON:  if(state==GLUT_UP)  escena::getAVEInstance()->arbol_pitagoras->quitaUnNivel();
+			break;
 	}
 	if (need_redisplay)
 		{

@@ -19,6 +19,8 @@
 // Viewport size
 int WIDTH= 1000, HEIGHT= 500;
 
+int TAM_CUADRADO;
+
 // Scene visible area size
 GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 250.0;
 
@@ -87,7 +89,11 @@ int main(int argc, char *argv[]){
 	//controlador controlador ;
 
 	std::cout<< "Starting ..." << std::endl;
-	
+	std::cout << "Introduce tam del cuadrado inicial : " << std::endl;
+
+	std::cin >> TAM_CUADRADO;
+
+
 	
 	//Inicializacion de mi AVE implementada con singleton
 	escena::getAVEInstance(xLeft,yBot,xRight,yTop);
