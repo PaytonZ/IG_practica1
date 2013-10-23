@@ -34,7 +34,7 @@ GLdouble triangleWidth= 100.0, triangleHeight= 50.0;
 void intitGL(){
 
 	glClearColor(1.0,1.0,1.0,1.0);
-	glColor3f(0.5,0.40,0.05); 
+	glColor3f(0.50,0.40,0.05); 
 
 	glPointSize(4.0);
 	glLineWidth(2.0);

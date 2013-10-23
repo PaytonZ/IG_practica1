@@ -27,6 +27,7 @@ public:
 	void setRed(GLdouble);
 	void setGreen(GLdouble);
 	void setBlue(GLdouble);
+	bool selecionado(punto, GLdouble) ;
 
 
 };

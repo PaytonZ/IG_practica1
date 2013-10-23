@@ -24,7 +24,7 @@ public:
 	*/
 	punto& operator = (const punto &p);
 	GLdouble distancia(punto);
-
+	bool estaCerca(punto p, GLdouble e);
 };
 
 #endif // !PUNTO_H

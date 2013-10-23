@@ -230,7 +230,7 @@ public:
 			_act = _act->_sig;
 		}
 
-		const T &elem() const {
+		const T &elem() const{
 			if (_act == NULL) throw EAccesoInvalido();
 			return _act->_elem;
 		}

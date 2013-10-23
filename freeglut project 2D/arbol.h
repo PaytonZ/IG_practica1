@@ -10,15 +10,13 @@ class arbol
 {
 public:
 
-	Lista<cuadrado> cuadradosArchivados;
-	Lista<cuadrado> cuadradosFrontera;
-	Lista< Lista<cuadrado> *> cuadrados;
+	
+	Lista< Lista<cuadrado >*> cuadrados;
 
 	arbol(void):nivel(0) {
 	
-		cuadradosArchivados= Lista<cuadrado>();
-		cuadradosArchivados= Lista<cuadrado>();
-		cuadrados = Lista< Lista<cuadrado> *>();
+		
+		cuadrados = Lista< Lista<cuadrado > *>();
 	
 	}
 
@@ -26,13 +24,12 @@ public:
 	
 	int nivel;
 
-	void pintaSiguienteNivel();
+	
 
-	void addCuadradoFrontera(cuadrado);
-	void addCuadradoArchivados(cuadrado);
+	
 	void draw();
 	void pintaCuadrados();
-	void addCuadradoInicial(punto,GLdouble);
+	void addCuadradoInicial(punto);
 	void quitaUnNivel();
 
 		void  liberarArbol()
@@ -45,6 +42,7 @@ public:
 				 delete l;
 			 }
 		 }
+	void selecion(punto);
 
 };
 

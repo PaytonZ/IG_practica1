@@ -83,8 +83,12 @@ void controlador:: key(int button, int state, int x, int y)
 	case GLUT_LEFT_BUTTON:
 		if(state==GLUT_UP)
 		{
-
-			escena::getAVEInstance()->arbol_pitagoras->addCuadradoInicial(escena::getAVEInstance()->dePuertodeVistaaAVE(x,y),100);
+			if(escena::getAVEInstance()->arbol_pitagoras->cuadrados.esVacia())
+				escena::getAVEInstance()->arbol_pitagoras->addCuadradoInicial(escena::getAVEInstance()->dePuertodeVistaaAVE(x,y));
+			else
+			{
+				escena::getAVEInstance()->arbol_pitagoras->selecion(escena::getAVEInstance()->dePuertodeVistaaAVE(x,y));
+			}
 		
 		}
 
