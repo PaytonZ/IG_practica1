@@ -47,6 +47,8 @@ public:
 
 	arbol *arbol_pitagoras;
 
+	punto dePuertodeVistaaAVE(int,int);
+	
 
 private:
 

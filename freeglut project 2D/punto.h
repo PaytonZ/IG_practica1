@@ -24,6 +24,7 @@ public:
 	*/
 	punto& operator = (const punto &p);
 	GLdouble distancia(punto);
+	bool estaCerca(punto,GLdouble);
 
 };
 
