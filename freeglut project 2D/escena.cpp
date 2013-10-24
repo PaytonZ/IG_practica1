@@ -160,14 +160,4 @@ escena* escena::getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble 
 		arbol_pitagoras->draw();
 	}
 	
-	punto escena::dePuertodeVistaaAVE (int x ,int y )
-	{
 	
-		
-			GLdouble escalaAncho= WIDTH / ( xRight - xLeft );
-
-			GLdouble escalaAlto = HEIGHT /( yTop -yBot); 
-
-			punto nuevo;
-			return punto( (x/escalaAncho) + xLeft,yTop - (y/escalaAlto)) ;
-	} 
