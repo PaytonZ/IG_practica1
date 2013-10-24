@@ -9,7 +9,9 @@
 
 
 extern int WIDTH, HEIGHT;
-
+extern GLdouble TAM_CUADRADO;
+extern GLdouble EPSILON;
+extern GLdouble ANGULO;
 
 void controlador::key(unsigned char key, int x, int y){
 
@@ -32,6 +34,23 @@ void controlador::key(unsigned char key, int x, int y){
 	case 'g' : escena::getAVEInstance()->arbol_pitagoras->draw(); break;
 
 	case 'h' : escena::getAVEInstance()->arbol_pitagoras->quitaUnNivel(); break;
+
+	case 'a' : std::cout << "Introduce el angulo de anidamiento : " << std::endl;
+
+				std::cin >> ANGULO; break;
+	case 'e': do{std::cout << "Introduce epsilon de busqueda deseado : " << std::endl;
+
+				std::cin >> EPSILON;
+				}
+				while (EPSILON<=0); break;
+	case 't': 
+		do{
+
+			std::cout << "Introduce tam del cuadrado inicial : " << std::endl;
+
+			std::cin >> TAM_CUADRADO;
+			}
+			while (TAM_CUADRADO<=0);break;
 
 	default:
 		need_redisplay = false;
