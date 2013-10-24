@@ -19,7 +19,9 @@
 // Viewport size
 int WIDTH= 1000, HEIGHT= 500;
 
-int TAM_CUADRADO;
+GLdouble TAM_CUADRADO;
+GLdouble EPSILON;
+GLdouble ANGULO;
 
 // Scene visible area size
 GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 250.0;
@@ -89,9 +91,24 @@ int main(int argc, char *argv[]){
 	//controlador controlador ;
 
 	std::cout<< "Starting ..." << std::endl;
+	do{
+
 	std::cout << "Introduce tam del cuadrado inicial : " << std::endl;
 
 	std::cin >> TAM_CUADRADO;
+	}
+	while (TAM_CUADRADO<=0);
+
+	do{
+	std::cout << "Introduce epsilon de busqueda deseado : " << std::endl;
+
+	std::cin >> EPSILON;
+	}
+	while (EPSILON<=0);
+
+	std::cout << "Introduce el angulo de anidamiento : " << std::endl;
+
+	std::cin >> ANGULO;
 
 
 	

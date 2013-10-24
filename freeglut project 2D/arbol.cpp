@@ -4,16 +4,19 @@
 #include "cuadrado.h"
 #include <iostream>
 
+extern GLdouble TAM_CUADRADO;
+extern GLdouble EPSILON;
+extern GLdouble ANGULO;
 
 
 	void arbol:: draw()
 	{
 		if (cuadrados.esVacia())
 		{
-			GLdouble tam;
-			std::cout<< "Introduce el tamaño que quieres para el primer cuadrado: ";
-			std::cin>>tam;
-			cuadrado a (punto(100,20),tam);
+			//GLdouble tam;
+			//std::cout<< "Introduce el tamaño que quieres para el primer cuadrado: ";
+			//std::cin>>tam;
+			cuadrado a (punto(100,20),TAM_CUADRADO);
 			a.creaCuadrado(0);
 			a.setRed(0.5);
 			a.setBlue(0.05);
@@ -25,6 +28,9 @@
 		}
 		else
 		{
+			//GLdouble asdf;
+			//std::cout<< "Dame el angulo de anidamiento: ";
+			//std::cin>> asdf;
 			Lista<cuadrado> * nuevaLista = new Lista<cuadrado>();
 			Lista<Lista<cuadrado>*> :: Iterador it= cuadrados.principio();
 			for (int i=0; i<cuadrados.numElems()-1;i++)
@@ -34,8 +40,8 @@
 			while(at!=asd.final())
 			{
 				cuadrado frontera= at.elem();
-				nuevaLista->ponDr(frontera.dameCuadradoDerecho());
-				nuevaLista->ponDr(frontera.dameCuadradoIzquierdo());
+				nuevaLista->ponDr(frontera.dameCuadradoDerecho(ANGULO));
+				nuevaLista->ponDr(frontera.dameCuadradoIzquierdo(ANGULO));
 				at.avanza();
 			}
 			nivel++;
@@ -80,17 +86,17 @@
 		
 		 if (cuadrados.esVacia())
 		 {
-				GLdouble tam;
-				std::cout<< "Introduce el tamaño que quieres para el primer cuadrado: ";
-				std::cin>>tam;
+				//GLdouble tam;
+				//std::cout<< "Introduce el tamaño que quieres para el primer cuadrado: ";
+				//std::cin>>tam;
 				lapiz l;		
 				l.dir=270;
 		 		l.moveTo(p,false);
 
-				l.forward(tam/2.0,false);
+				l.forward(TAM_CUADRADO/2.0,false);
 				l.dir=180;
-				l.forward(tam/2.0,false);
-				cuadrado a(l.pos,tam);
+				l.forward(TAM_CUADRADO/2.0,false);
+				cuadrado a(l.pos,TAM_CUADRADO);
 				a.creaCuadrado(0);
 				a.setRed(0.5);
 				a.setBlue(0.05);
@@ -108,9 +114,9 @@
 	 {
 		 bool esta=false;
 		 Lista<Lista<cuadrado>*>:: Iterador it=cuadrados.principio();
-		 GLdouble eps;
-			std::cout << "Escribame usted el EpsionSubCeroMaligno: " ;
-			 std::cin >> eps ;
+		// GLdouble eps;
+			//std::cout << "Escribame usted el EpsionSubCeroMaligno: " ;
+			 //std::cin >> eps ;
 		 while (it!=cuadrados.final() && !esta)
 		 {
 			 Lista<cuadrado>* asd= it.elem();
@@ -118,7 +124,7 @@
 			 while (at!=(*asd).final() && !esta)
 			 {
 				 cuadrado abc=at.elem();
-				 if(abc.selecionado(a,eps))
+				 if(abc.selecionado(a,EPSILON))
 				{
 					esta=true;
 					(*asd).borra(at);
@@ -129,7 +135,7 @@
 			 it.avanza();
 		 }
 		 if (!esta)
-			 std::cout << "No se econtro anda con ese epsion maligno" << std::endl;
+			 std::cout << "No se econtro nada con ese epsion" << std::endl;
 
 	 }
 

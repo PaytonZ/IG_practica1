@@ -20,8 +20,8 @@ public:
 	GLdouble blue;
 
 	void creaCuadrado(GLdouble dir);
-	cuadrado dameCuadradoDerecho();
-	cuadrado dameCuadradoIzquierdo();
+	cuadrado dameCuadradoDerecho(GLdouble angulo);
+	cuadrado dameCuadradoIzquierdo(GLdouble angulo);
 	void setEsquinaInferiorDerecha(punto a);
 	void crearCuadradoDerecha(GLdouble dir);
 	void setRed(GLdouble);

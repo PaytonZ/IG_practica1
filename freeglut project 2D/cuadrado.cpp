@@ -66,12 +66,13 @@ void cuadrado:: crearCuadradoDerecha(GLdouble dir)
 
 }
 
-cuadrado cuadrado:: dameCuadradoDerecho()
+cuadrado cuadrado:: dameCuadradoDerecho(GLdouble angulo)
 {
-	GLdouble h=sqrt(2)*distancia/2.0;
+	//GLdouble h=sqrt(2)*distancia/2.0;
+	GLdouble h= distancia*cos(3.1416*angulo/180.0);
 	cuadrado derecha(esquina_superior_derecha,h);
 	derecha.setEsquinaInferiorDerecha(esquina_superior_derecha);
-	derecha.crearCuadradoDerecha(direccion-135);
+	derecha.crearCuadradoDerecha(direccion-90-angulo);
 	if (red!=0)
 		derecha.setRed(red-0.005);
 	else
@@ -87,11 +88,12 @@ cuadrado cuadrado:: dameCuadradoDerecho()
 	return derecha;
 }
 
-cuadrado cuadrado:: dameCuadradoIzquierdo()
+cuadrado cuadrado:: dameCuadradoIzquierdo(GLdouble angulo)
 {
-	GLdouble h=sqrt(2)*distancia/2.0;
+	//GLdouble h=sqrt(2)*distancia/2.0;
+	GLdouble h=distancia*sin(3.1416*angulo/180.0);
 	cuadrado izquierda(esquina_superior_izquierda,h);
-	izquierda.creaCuadrado(direccion-135);
+	izquierda.creaCuadrado(direccion-90-angulo);
 	if (red!=0)
 		izquierda.setRed(red-0.1);
 	else
