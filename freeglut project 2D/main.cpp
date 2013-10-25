@@ -106,7 +106,7 @@ int main(int argc, char *argv[]){
 	}
 	while (EPSILON<=0);
 
-	std::cout << "Introduce el angulo de anidamiento : " << std::endl;
+	std::cout << "Introduce el angulo de anidamiento (45 estandar) : " << std::endl;
 
 	std::cin >> ANGULO;
 

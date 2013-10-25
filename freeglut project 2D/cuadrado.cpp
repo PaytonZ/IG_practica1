@@ -17,8 +17,17 @@
 
 void  cuadrado::  pintarCuadrado() const
 {
-	glColor3f(red,green,blue);
 	
+	
+	if(cuadrado_selecionado)
+	{
+		glColor3f(0,0,0);
+	}
+	else
+	{
+		glColor3f(red,green,blue);
+	}
+
 	//Sentido antihorario
 	glBegin(GL_QUADS);
 
@@ -131,14 +140,13 @@ void cuadrado :: setGreen (GLdouble colorgreen)
 
 bool cuadrado :: selecionado(punto a, GLdouble eps)
 {
+	bool seleccion=false;
 	
 	 if (a.estaCerca(esquina_inferior_derecha,eps) || a.estaCerca(esquina_inferior_izquierda,eps) || a.estaCerca(esquina_superior_derecha,eps) || a.estaCerca(esquina_superior_izquierda,eps))
 	 {
-		 red=0.00;
-		 green=0.00;
-		 blue=0.00;
-	return true;
-
+		cuadrado_selecionado=true;
+		seleccion=true;
 	 }
-	return false ;
+	 return seleccion;
+
 }

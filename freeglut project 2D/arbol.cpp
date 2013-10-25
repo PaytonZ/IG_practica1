@@ -114,9 +114,7 @@ extern GLdouble ANGULO;
 	 {
 		 bool esta=false;
 		 Lista<Lista<cuadrado>*>:: Iterador it=cuadrados.principio();
-		// GLdouble eps;
-			//std::cout << "Escribame usted el EpsionSubCeroMaligno: " ;
-			 //std::cin >> eps ;
+		
 		 while (it!=cuadrados.final() && !esta)
 		 {
 			 Lista<cuadrado>* asd= it.elem();
@@ -126,6 +124,7 @@ extern GLdouble ANGULO;
 				 cuadrado abc=at.elem();
 				 if(abc.selecionado(a,EPSILON))
 				{
+					std::cout << "Encontrado cuadrado! " << std::endl;
 					esta=true;
 					(*asd).borra(at);
 					(*asd).ponDr(abc);
@@ -135,7 +134,7 @@ extern GLdouble ANGULO;
 			 it.avanza();
 		 }
 		 if (!esta)
-			 std::cout << "No se econtro nada con ese epsion" << std::endl;
+			 std::cout << "No se encontro nada con ese epsion" << std::endl;
 
 	 }
 

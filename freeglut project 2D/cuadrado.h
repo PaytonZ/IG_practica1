@@ -5,21 +5,24 @@
 class cuadrado
 {
 public:
-	cuadrado(punto ini, GLdouble l):esquina_inferior_izquierda(ini), distancia(l){}
+	cuadrado(punto ini, GLdouble l):esquina_inferior_izquierda(ini), distancia(l),cuadrado_selecionado(false){}
 
-	void  pintarCuadrado() const;
+	
 	punto esquina_inferior_izquierda;
 	punto esquina_inferior_derecha;
 	punto esquina_superior_izquierda;
 	punto esquina_superior_derecha;
+	
 	GLdouble distancia;
 	GLdouble direccion;
-	
-	GLdouble red;
-	GLdouble green;
-	GLdouble blue;
+	//Colores
+	GLfloat red;
+	GLfloat green;
+	GLfloat blue;
+	bool cuadrado_selecionado;
 
 	void creaCuadrado(GLdouble dir);
+	void  pintarCuadrado() const;
 	cuadrado dameCuadradoDerecho(GLdouble angulo);
 	cuadrado dameCuadradoIzquierdo(GLdouble angulo);
 	void setEsquinaInferiorDerecha(punto a);
