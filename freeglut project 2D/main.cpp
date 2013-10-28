@@ -19,20 +19,15 @@
 // Viewport size
 int WIDTH= 1000, HEIGHT= 500;
 
-GLdouble TAM_CUADRADO;
-GLdouble EPSILON;
-GLdouble ANGULO;
+
 
 // Scene visible area size
 GLdouble xLeft= 0.0, xRight= 500.0, yBot= 0.0, yTop= 250.0;
 
 
-
-//GLdouble xLeft= 0.0, xRight= 1280.0, yBot= 0.0, yTop= 1024.0;
-
-// Scene variables
-GLdouble xTriangle= 100.0, yTriangle= 100.0;
-GLdouble triangleWidth= 100.0, triangleHeight= 50.0;
+GLdouble TAM_CUADRADO;
+GLdouble EPSILON= 0.10*abs(xRight-xLeft);
+GLdouble ANGULO;
 
 
 void intitGL(){
@@ -59,36 +54,10 @@ void intitGL(){
 }
 
 
-void display(){
-
-
-	glClear( GL_COLOR_BUFFER_BIT );
-
-
-//Obtener mi centro
-	punto p=escena::getAVEInstance()->getCentro();
-		
-	/*glBegin(GL_POINTS);
-		glVertex2d(p.x,p.y);
-	glEnd();*/
-	
-
-	escena::getAVEInstance()->arbol_pitagoras->pintaCuadrados();
-	
-	
-
-
-	glFlush();
-	glutSwapBuffers();
-
-
-
-}
-
 
 int main(int argc, char *argv[]){
 
-	//controlador controlador ;
+	
 
 	std::cout<< "Starting ..." << std::endl;
 	do{
@@ -99,12 +68,12 @@ int main(int argc, char *argv[]){
 	}
 	while (TAM_CUADRADO<=0);
 
-	do{
+	/*do{
 	std::cout << "Introduce epsilon de busqueda deseado : " << std::endl;
 
 	std::cin >> EPSILON;
 	}
-	while (EPSILON<=0);
+	while (EPSILON<=0);*/
 
 	std::cout << "Introduce el angulo de anidamiento (45 estandar) : " << std::endl;
 
@@ -133,7 +102,7 @@ int main(int argc, char *argv[]){
 	glutKeyboardFunc(controlador::key);
 	glutMouseFunc(controlador::key);
 	glutSpecialFunc(controlador::key);
-	glutDisplayFunc(display);
+	glutDisplayFunc(escena::display);
 
 	//OpenGL basic setting
 	intitGL();
@@ -151,6 +120,7 @@ int main(int argc, char *argv[]){
 	// Classic glut's main loop can be stopped in freeglut using (*)
 	glutMainLoop(); 
 
+	//Liberacion de punteros.
 	escena::getAVEInstance()->arbol_pitagoras->liberarArbol();
 
 	// We would never reach this point using classic glut

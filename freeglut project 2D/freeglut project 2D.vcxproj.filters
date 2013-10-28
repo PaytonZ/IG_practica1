@@ -27,9 +27,6 @@
     <ClCompile Include="controlador.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="maintest2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="cuadrado.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -3,6 +3,7 @@
 #include "Lista.h"
 #include "cuadrado.h"
 #include <iostream>
+#include "escena.h"
 
 extern GLdouble TAM_CUADRADO;
 extern GLdouble EPSILON;
@@ -13,9 +14,7 @@ extern GLdouble ANGULO;
 	{
 		if (cuadrados.esVacia())
 		{
-			//GLdouble tam;
-			//std::cout<< "Introduce el tamaño que quieres para el primer cuadrado: ";
-			//std::cin>>tam;
+			
 			cuadrado a (punto(100,20),TAM_CUADRADO);
 			a.creaCuadrado(0);
 			a.setRed(0.5);
@@ -28,9 +27,7 @@ extern GLdouble ANGULO;
 		}
 		else
 		{
-			//GLdouble asdf;
-			//std::cout<< "Dame el angulo de anidamiento: ";
-			//std::cin>> asdf;
+			
 			Lista<cuadrado> * nuevaLista = new Lista<cuadrado>();
 			Lista<Lista<cuadrado>*> :: Iterador it= cuadrados.principio();
 			for (int i=0; i<cuadrados.numElems()-1;i++)
@@ -122,7 +119,9 @@ extern GLdouble ANGULO;
 			 while (at!=(*asd).final() && !esta)
 			 {
 				 cuadrado abc=at.elem();
-				 if(abc.selecionado(a,EPSILON))
+				GLdouble epsilon = abs(escena::getAVEInstance()->getxRight() - escena::getAVEInstance()->getxLeft())*0.02;
+
+				 if(abc.selecionado(a,epsilon))
 				{
 					std::cout << "Encontrado cuadrado! " << std::endl;
 					esta=true;

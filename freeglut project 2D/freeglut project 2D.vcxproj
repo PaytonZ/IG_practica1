@@ -127,7 +127,6 @@
     <ClCompile Include="lapiz.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="punto.cpp" />
-    <ClCompile Include="maintest2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arbol.h" />

@@ -52,6 +52,14 @@ void controlador::key(unsigned char key, int x, int y){
 			}
 			while (TAM_CUADRADO<=0);break;
 
+	case 'o' :
+		escena::getAVEInstance()->escalacionProgresivo(1.1);
+		 break;
+
+	case 'p' : 
+		escena::getAVEInstance()->escalacionProgresivo(0.9);
+		break;
+
 	default:
 		need_redisplay = false;
 		break;
@@ -70,18 +78,18 @@ void controlador::key(int key, int x, int y){
 	switch (key) {
 
 	case GLUT_KEY_LEFT:
-		escena::getAVEInstance()->translacionX(10.0);
+		escena::getAVEInstance()->translacionX(-10.0);
 		break;
 	case GLUT_KEY_UP :
-		escena::getAVEInstance()->translacionY(-10.0);
+		escena::getAVEInstance()->translacionY(+10.0);
 
 		break;
 	case GLUT_KEY_RIGHT :
-		escena::getAVEInstance()->translacionX(-10.0);
+		escena::getAVEInstance()->translacionX(10.0);
 
 		break;
 	case GLUT_KEY_DOWN :
-		escena::getAVEInstance()->translacionY(10.0);
+		escena::getAVEInstance()->translacionY(-10.0);
 		break;		
 
 	default:

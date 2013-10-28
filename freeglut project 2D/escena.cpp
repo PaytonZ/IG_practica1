@@ -1,6 +1,10 @@
 #include "escena.h"
 #include <iostream>
+#include <Windows.h>
+#include <gl/GL.h>
+#include <gl/GLU.h>
 
+#include <GL/freeglut.h>
 
 extern int WIDTH, HEIGHT;
 
@@ -45,7 +49,7 @@ void escena::setyBot(GLdouble new_ybot )
 
 punto escena::getCentro()
 {
-	return punto((xRight+xLeft)/2,(yTop+yBot)/2);
+	return punto((xRight+xLeft)/2.0,(yTop+yBot)/2.0);
 }	
 
 
@@ -168,6 +172,53 @@ escena* escena::getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble 
 
 			GLdouble escalaAlto = HEIGHT /( yTop -yBot); 
 
-			punto nuevo;
+			
 			return punto( (x/escalaAncho) + xLeft,yTop - (y/escalaAlto)) ;
 	} 
+
+	void escena::escalacionProgresivo(GLdouble factor)
+	{
+		int nIter = 10;
+		GLdouble inc= (factor-1) / (GLdouble) nIter ;
+		for(int i=0; i < nIter ; i++)
+		{
+
+		GLdouble faux = 1 + inc *i;
+
+		GLdouble anchonew = ((xRight+xLeft)/2.0) / faux ;
+		GLdouble altonew = ((yTop+yBot)/2.0) / faux ;
+
+		punto c= getCentro();
+		xLeft= c.x - anchonew / 2.0;
+		xRight= c.x + anchonew / 2.0;
+		
+		yBot= c.y - altonew / 2.0;
+		yTop= c.y + altonew / 2.0;
+		
+
+		glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(xLeft,xRight,yBot,yTop);
+
+	display();
+
+	Sleep(50);
+
+
+		}
+	}
+
+	
+	void escena::display()
+	{
+		glClear( GL_COLOR_BUFFER_BIT );
+
+
+		getAVEInstance()->arbol_pitagoras->pintaCuadrados();
+	
+
+	glFlush();
+	glutSwapBuffers();
+
+
+	}

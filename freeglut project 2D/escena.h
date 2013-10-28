@@ -9,7 +9,7 @@
 
 
 
-extern int WIDTH, HEIGHT;
+extern int WIDTH, HEIGHT ;
 
 class escena
 {
@@ -48,6 +48,11 @@ public:
 	arbol *arbol_pitagoras;
 
 	punto dePuertodeVistaaAVE(int,int);
+
+	void escalacionProgresivo(GLdouble);
+
+	static void display();
+
 	
 
 private:
