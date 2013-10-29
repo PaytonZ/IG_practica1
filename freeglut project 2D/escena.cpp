@@ -178,15 +178,18 @@ escena* escena::getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble 
 
 	void escena::escalacionProgresivo(GLdouble factor)
 	{
-		int nIter = 10;
+		int nIter = 40;
 		GLdouble inc= (factor-1) / (GLdouble) nIter ;
+		GLdouble ancho= ((xRight-xLeft));
+		GLdouble alto = ((yTop-yBot));
+
 		for(int i=0; i < nIter ; i++)
 		{
 
 		GLdouble faux = 1 + inc *i;
-
-		GLdouble anchonew = ((xRight+xLeft)/2.0) / faux ;
-		GLdouble altonew = ((yTop+yBot)/2.0) / faux ;
+		
+		GLdouble anchonew = ancho / faux;
+		GLdouble altonew = alto / faux;
 
 		punto c= getCentro();
 		xLeft= c.x - anchonew / 2.0;
@@ -202,7 +205,7 @@ escena* escena::getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble 
 
 	display();
 
-	Sleep(50);
+	Sleep(10);
 
 
 		}
