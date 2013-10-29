@@ -1,3 +1,12 @@
+/********************************************************************************
+*																				*
+*		Practica 1 IG - Pythagoras tree											*
+*		Autores:	David Garcia Alvarez										*
+*					Juan Luis Perez Valbuena									*
+*																				*
+*********************************************************************************/
+
+
 #ifndef ESCENA_H
 #define ESCENA_H
 
@@ -53,7 +62,9 @@ public:
 
 	static void display();
 
-	
+	void embaldosar(int);
+
+
 
 private:
 
@@ -61,7 +72,7 @@ private:
 	escena(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop):
 		xLeft(new_xleft) , xRight(new_xright) ,  yBot(new_yBot) , yTop(new_yTop) {
 			arbol_pitagoras = new arbol();
-		
+
 	}
 
 	static escena* AVE;

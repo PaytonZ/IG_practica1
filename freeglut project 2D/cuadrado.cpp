@@ -1,24 +1,26 @@
+/********************************************************************************
+*																				*
+*		Practica 1 IG - Pythagoras tree											*
+*		Autores:	David Garcia Alvarez										*
+*					Juan Luis Perez Valbuena									*
+*																				*
+*********************************************************************************/
+
+
 #include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include <math.h> 
-
 #include <GL/freeglut.h>
-
-
 #include <iostream>
-
 #include "escena.h"
 #include "controlador.h"
 #include "lapiz.h"
 #include "cuadrado.h"
 
-
-
 void  cuadrado::  pintarCuadrado() const
 {
-	
-	
+
 	if(cuadrado_selecionado)
 	{
 		glColor3f(0,0,0);
@@ -27,14 +29,13 @@ void  cuadrado::  pintarCuadrado() const
 	{
 		glColor3f(red,green,blue);
 	}
-
 	//Sentido antihorario
 	glBegin(GL_QUADS);
 
-		glVertex2d(esquina_inferior_izquierda.x,esquina_inferior_izquierda.y);
-		glVertex2d(esquina_inferior_derecha.x,esquina_inferior_derecha.y);
-		glVertex2d(esquina_superior_derecha.x,esquina_superior_derecha.y);
-		glVertex2d(esquina_superior_izquierda.x,esquina_superior_izquierda.y);
+	glVertex2d(esquina_inferior_izquierda.x,esquina_inferior_izquierda.y);
+	glVertex2d(esquina_inferior_derecha.x,esquina_inferior_derecha.y);
+	glVertex2d(esquina_superior_derecha.x,esquina_superior_derecha.y);
+	glVertex2d(esquina_superior_izquierda.x,esquina_superior_izquierda.y);
 
 	glEnd();
 
@@ -141,12 +142,12 @@ void cuadrado :: setGreen (GLdouble colorgreen)
 bool cuadrado :: selecionado(punto a, GLdouble eps)
 {
 	bool seleccion=false;
-	
-	 if (a.estaCerca(esquina_inferior_derecha,eps) || a.estaCerca(esquina_inferior_izquierda,eps) || a.estaCerca(esquina_superior_derecha,eps) || a.estaCerca(esquina_superior_izquierda,eps))
-	 {
+
+	if (a.estaCerca(esquina_inferior_derecha,eps) || a.estaCerca(esquina_inferior_izquierda,eps) || a.estaCerca(esquina_superior_derecha,eps) || a.estaCerca(esquina_superior_izquierda,eps))
+	{
 		cuadrado_selecionado=true;
 		seleccion=true;
-	 }
-	 return seleccion;
+	}
+	return seleccion;
 
 }

@@ -1,14 +1,20 @@
+/********************************************************************************
+*																				*
+*		Practica 1 IG - Pythagoras tree											*
+*		Autores:	David Garcia Alvarez										*
+*					Juan Luis Perez Valbuena									*
+*																				*
+*********************************************************************************/
+
 #include "escena.h"
 #include <iostream>
 #include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
-
 #include <GL/freeglut.h>
 
+
 extern int WIDTH, HEIGHT;
-
-
 escena* escena::AVE = NULL;
 
 GLdouble escena::getxRight() const{
@@ -58,7 +64,7 @@ void __cdecl  escena::resize(int newWidth, int newHeight){
 	//Resize Viewport
 	WIDTH= newWidth;
 	HEIGHT= newHeight;
-	
+
 
 	GLdouble RatioViewPort= (float)WIDTH/(float)HEIGHT;
 	glViewport ( 0, 0, WIDTH, HEIGHT ) ;
@@ -91,9 +97,9 @@ void __cdecl  escena::resize(int newWidth, int newHeight){
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 
-	
+
 	gluOrtho2D(_AVE->getxLeft(),_AVE->getxRight(), _AVE->getyBot(),_AVE->getyTop());
-	
+
 }
 
 escena* escena::getAVEInstance()
@@ -108,120 +114,126 @@ escena* escena::getAVEInstance()
 escena* escena::getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop)
 {       
 	if (!AVE)
-	
+
 	{
 		AVE=new escena(new_xleft,new_yBot, new_xright, new_yTop);
 		atexit(escena::_AVE_deleter);
 	}
 	return AVE;
 }
-	void escena::translacionX(GLdouble incremento){
-		xLeft+=incremento;
-		xRight+=incremento;
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		gluOrtho2D(xLeft,xRight,yBot,yTop);
+void escena::translacionX(GLdouble incremento){
+	xLeft+=incremento;
+	xRight+=incremento;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(xLeft,xRight,yBot,yTop);
 }
 
-	
-	void escena::translacionY(GLdouble incremento){
-		yTop+=incremento;
-		yBot+=incremento;
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		gluOrtho2D(xLeft,xRight,yBot,yTop);
+
+void escena::translacionY(GLdouble incremento){
+	yTop+=incremento;
+	yBot+=incremento;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(xLeft,xRight,yBot,yTop);
 }
-	
-	void escena::escalacion(GLdouble factor){
+
+void escena::escalacion(GLdouble factor){
 
 	punto centro=getCentro();
-		GLdouble nuevoancho = (xRight - xLeft) / factor;
-		GLdouble nuevoalto = (yTop-yBot) / factor ;
-			
-		xRight = centro.x + nuevoancho /2.0;
-		xLeft = centro.x - nuevoancho /2.0;
-		yBot = centro.y - nuevoalto /2.0;
-		yTop = centro.y + nuevoalto / 2.0;
-		
-		glMatrixMode(GL_PROJECTION);
-		glLoadIdentity();
-		gluOrtho2D(xLeft,xRight,yBot,yTop);
+	GLdouble nuevoancho = (xRight - xLeft) / factor;
+	GLdouble nuevoalto = (yTop-yBot) / factor ;
+
+	xRight = centro.x + nuevoancho /2.0;
+	xLeft = centro.x - nuevoancho /2.0;
+	yBot = centro.y - nuevoalto /2.0;
+	yTop = centro.y + nuevoalto / 2.0;
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluOrtho2D(xLeft,xRight,yBot,yTop);
 }
-	
-	
-	arbol* escena::getArbol()
-	{
-		return  arbol_pitagoras;
-;
-	}
-	void escena::setArbol(arbol* a)
-	{
-		arbol_pitagoras = a;
-	}
 
-	void escena:: draw()
+
+arbol* escena::getArbol()
+{
+	return  arbol_pitagoras;
+	;
+}
+void escena::setArbol(arbol* a)
+{
+	arbol_pitagoras = a;
+}
+
+void escena:: draw()
+{
+	arbol_pitagoras->draw();
+}
+
+punto escena::dePuertodeVistaaAVE (int x ,int y )
+{
+
+
+	GLdouble escalaAncho= WIDTH / ( xRight - xLeft );
+
+	GLdouble escalaAlto = HEIGHT /( yTop -yBot); 
+
+
+	return punto( (x/escalaAncho) + xLeft,yTop - (y/escalaAlto)) ;
+} 
+
+void escena::escalacionProgresivo(GLdouble factor)
+{
+	int nIter = 40;
+	GLdouble inc= (factor-1) / (GLdouble) nIter ;
+	GLdouble ancho= ((xRight-xLeft));
+	GLdouble alto = ((yTop-yBot));
+
+	for(int i=0; i < nIter ; i++)
 	{
-		arbol_pitagoras->draw();
-	}
-	
-	punto escena::dePuertodeVistaaAVE (int x ,int y )
-	{
-	
-		
-			GLdouble escalaAncho= WIDTH / ( xRight - xLeft );
-
-			GLdouble escalaAlto = HEIGHT /( yTop -yBot); 
-
-			
-			return punto( (x/escalaAncho) + xLeft,yTop - (y/escalaAlto)) ;
-	} 
-
-	void escena::escalacionProgresivo(GLdouble factor)
-	{
-		int nIter = 40;
-		GLdouble inc= (factor-1) / (GLdouble) nIter ;
-		GLdouble ancho= ((xRight-xLeft));
-		GLdouble alto = ((yTop-yBot));
-
-		for(int i=0; i < nIter ; i++)
-		{
 
 		GLdouble faux = 1 + inc *i;
-		
+
 		GLdouble anchonew = ancho / faux;
 		GLdouble altonew = alto / faux;
 
 		punto c= getCentro();
 		xLeft= c.x - anchonew / 2.0;
 		xRight= c.x + anchonew / 2.0;
-		
+
 		yBot= c.y - altonew / 2.0;
 		yTop= c.y + altonew / 2.0;
-		
+
 
 		glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluOrtho2D(xLeft,xRight,yBot,yTop);
+		glLoadIdentity();
+		gluOrtho2D(xLeft,xRight,yBot,yTop);
 
-	display();
+		display();
 
-	Sleep(10);
+		Sleep(10);
 
 
-		}
 	}
-
-	
-	void escena::display()
-	{
-		glClear( GL_COLOR_BUFFER_BIT );
+}
 
 
-		getAVEInstance()->arbol_pitagoras->pintaCuadrados();
-	
+void escena::display()
+{
+	glClear( GL_COLOR_BUFFER_BIT );
+
+
+	getAVEInstance()->arbol_pitagoras->pintaCuadrados();
+
 
 	glFlush();
 	glutSwapBuffers();
 
 
-	}
+}
+
+
+void escena::embaldosar(int nCols)
+{
+
+}

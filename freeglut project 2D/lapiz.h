@@ -1,3 +1,12 @@
+/********************************************************************************
+*																				*
+*		Practica 1 IG - Pythagoras tree											*
+*		Autores:	David Garcia Alvarez										*
+*					Juan Luis Perez Valbuena									*
+*																				*
+*********************************************************************************/
+
+
 #ifndef LAPIZ_H
 #define LAPIZ_H
 #include "punto.h"

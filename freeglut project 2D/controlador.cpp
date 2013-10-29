@@ -1,3 +1,10 @@
+/********************************************************************************
+*																				*
+*		Practica 1 IG - Pythagoras tree											*
+*		Autores:	David Garcia Alvarez										*
+*					Juan Luis Perez Valbuena									*
+*																				*
+*********************************************************************************/
 
 #include <Windows.h>
 #include <gl/GL.h>
@@ -37,24 +44,24 @@ void controlador::key(unsigned char key, int x, int y){
 
 	case 'a' : std::cout << "Introduce el angulo de anidamiento : " << std::endl;
 
-				std::cin >> ANGULO; break;
+		std::cin >> ANGULO; break;
 	case 'e': do{std::cout << "Introduce epsilon de busqueda deseado : " << std::endl;
 
-				std::cin >> EPSILON;
-				}
-				while (EPSILON<=0); break;
+		std::cin >> EPSILON;
+			  }
+			  while (EPSILON<=0); break;
 	case 't': 
 		do{
 
 			std::cout << "Introduce tam del cuadrado inicial : " << std::endl;
 
 			std::cin >> TAM_CUADRADO;
-			}
-			while (TAM_CUADRADO<=0);break;
+		}
+		while (TAM_CUADRADO<=0);break;
 
 	case 'o' :
 		escena::getAVEInstance()->escalacionProgresivo(1.3);
-		 break;
+		break;
 
 	case 'p' : 
 		escena::getAVEInstance()->escalacionProgresivo(0.7);
@@ -66,8 +73,8 @@ void controlador::key(unsigned char key, int x, int y){
 	}//switch
 
 	if (need_redisplay)
-		{
-			glutPostRedisplay();
+	{
+		glutPostRedisplay();
 	}
 }
 
@@ -117,14 +124,14 @@ void controlador:: key(int button, int state, int x, int y)
 			{
 				escena::getAVEInstance()->arbol_pitagoras->selecion(escena::getAVEInstance()->dePuertodeVistaaAVE(x,y));
 			}
-		
+
 		}
 
 		break;
 	}
 	if (need_redisplay)
-		{
-			glutPostRedisplay();
+	{
+		glutPostRedisplay();
 	}
 
 }

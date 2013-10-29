@@ -1,3 +1,11 @@
+/********************************************************************************
+*																				*
+*		Practica 1 IG - Pythagoras tree											*
+*		Autores:	David Garcia Alvarez										*
+*					Juan Luis Perez Valbuena									*
+*																				*
+*********************************************************************************/
+
 #ifndef CUADRADO_H
 #define CUADRADO_H
 #include "punto.h"
@@ -7,12 +15,12 @@ class cuadrado
 public:
 	cuadrado(punto ini, GLdouble l):esquina_inferior_izquierda(ini), distancia(l),cuadrado_selecionado(false){}
 
-	
+
 	punto esquina_inferior_izquierda;
 	punto esquina_inferior_derecha;
 	punto esquina_superior_izquierda;
 	punto esquina_superior_derecha;
-	
+
 	GLdouble distancia;
 	GLdouble direccion;
 	//Colores

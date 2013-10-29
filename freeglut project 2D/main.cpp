@@ -1,16 +1,21 @@
+/********************************************************************************
+*																				*
+*		Practica 1 IG - Pythagoras tree											*
+*		Autores:	David Garcia Alvarez										*
+*					Juan Luis Perez Valbuena									*
+*																				*
+*********************************************************************************/
+
 #include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
-
 #include <GL/freeglut.h>
-//#include <GL/glut.h>
-
 #include <iostream>
-
 #include "escena.h"
 #include "controlador.h"
 #include "lapiz.h"
 #include "cuadrado.h"
+
 
 // Freeglut parameters
 // Flag telling us to keep processing events
@@ -57,36 +62,30 @@ void intitGL(){
 
 int main(int argc, char *argv[]){
 
-	
+
 
 	std::cout<< "Starting ..." << std::endl;
 	do{
 
-	std::cout << "Introduce tam del cuadrado inicial : " << std::endl;
+		std::cout << "Introduce tam del cuadrado inicial : " << std::endl;
 
-	std::cin >> TAM_CUADRADO;
+		std::cin >> TAM_CUADRADO;
 	}
 	while (TAM_CUADRADO<=0);
 
-	/*do{
-	std::cout << "Introduce epsilon de busqueda deseado : " << std::endl;
-
-	std::cin >> EPSILON;
-	}
-	while (EPSILON<=0);*/
 
 	std::cout << "Introduce el angulo de anidamiento (45 estandar) : " << std::endl;
 
 	std::cin >> ANGULO;
 
 
-	
+
 	//Inicializacion de mi AVE implementada con singleton
 	escena::getAVEInstance(xLeft,yBot,xRight,yTop);
 
 	int my_window; //my window's identifier
 
-	
+
 
 	//Initialization
 	glutInitWindowSize(WIDTH, HEIGHT);

@@ -1,14 +1,15 @@
+
 /**
-  @file Lista.h
+@file Lista.h
 
-  Implementación del TAD lista, utilizando una 
-  lista doblemente enlazada.
+Implementación del TAD lista, utilizando una 
+lista doblemente enlazada.
 
-  Estructura de Datos y Algoritmos
-  Facultad de Informática
-  Universidad Complutense de Madrid
+Estructura de Datos y Algoritmos
+Facultad de Informática
+Universidad Complutense de Madrid
 
- (c) Marco Antonio Gómez Martín, 2012
+(c) Marco Antonio Gómez Martín, 2012
 */
 #ifndef __LISTA_H
 #define __LISTA_H
@@ -18,39 +19,39 @@
 #include "cuadrado.h"
 
 /**
- Implementación del TAD Pila utilizando vectores dinámicos.
+Implementación del TAD Pila utilizando vectores dinámicos.
 
- Las operaciones son:
+Las operaciones son:
 
- - ListaVacia: -> Lista. Generadora implementada en el
-   constructor sin parámetros.
- - Cons: Lista, Elem -> Lista. Generadora.
- - ponDr: Lista, Elem -> Lista. Modificadora.
- - primero: Lista - -> Elem. Observadora parcial
- - resto: Lista - -> Lista. Modificadora parcial
- - ultimo: Lista - -> Elem. Observadora parcial
- - inicio: Lista - -> Lista. Modificadora parcial
- - esVacia: Lista -> Bool. Observadora
- - numElems: Lista -> Elem. Obervadora.
- - elem: Lista, Entero - -> Elem. Observador parcial.
+- ListaVacia: -> Lista. Generadora implementada en el
+constructor sin parámetros.
+- Cons: Lista, Elem -> Lista. Generadora.
+- ponDr: Lista, Elem -> Lista. Modificadora.
+- primero: Lista - -> Elem. Observadora parcial
+- resto: Lista - -> Lista. Modificadora parcial
+- ultimo: Lista - -> Elem. Observadora parcial
+- inicio: Lista - -> Lista. Modificadora parcial
+- esVacia: Lista -> Bool. Observadora
+- numElems: Lista -> Elem. Obervadora.
+- elem: Lista, Entero - -> Elem. Observador parcial.
 
- @author Marco Antonio Gómez Martín
- */
+@author Marco Antonio Gómez Martín
+*/
 template <class T>
 class Lista {
 private:
 	/**
-	 Clase nodo que almacena internamente el elemento (de tipo T),
-	 y dos punteros, uno al nodo anterior y otro al nodo siguiente.
-	 Ambos punteros podrían ser NULL si el nodo es el primero
-	 y/o último de la lista enlazada.
-	 */
+	Clase nodo que almacena internamente el elemento (de tipo T),
+	y dos punteros, uno al nodo anterior y otro al nodo siguiente.
+	Ambos punteros podrían ser NULL si el nodo es el primero
+	y/o último de la lista enlazada.
+	*/
 	class Nodo {
 	public:
 		Nodo() : _sig(NULL), _ant(NULL) {}
 		Nodo(const T &elem) : _elem(elem), _sig(NULL), _ant(NULL) {}
 		Nodo(Nodo *ant, const T &elem, Nodo *sig) : 
-		    _elem(elem), _sig(sig), _ant(ant) {}
+			_elem(elem), _sig(sig), _ant(ant) {}
 
 		T _elem;
 		Nodo *_sig;
@@ -68,11 +69,11 @@ public:
 	}
 
 	/**
-	 Añade un nuevo elemento en la cabeza de la lista.
-	 Operación generadora.
+	Añade un nuevo elemento en la cabeza de la lista.
+	Operación generadora.
 
-	 @param elem Elemento que se añade en la cabecera de
-	 la lista.
+	@param elem Elemento que se añade en la cabecera de
+	la lista.
 	*/
 	void Cons(const T &elem) {
 		_numElems++;
@@ -82,11 +83,11 @@ public:
 	}
 
 	/**
-	 Añade un nuevo elemento al final de la lista (a la 
-	 "derecha"). Operación modificadora.
+	Añade un nuevo elemento al final de la lista (a la 
+	"derecha"). Operación modificadora.
 
-	 ponDr(e, ListaVacia) = Cons(e, ListaVacia)
-	 ponDr(e, Cons(x, xs)) = Cons(x, ponDr(e, xs))
+	ponDr(e, ListaVacia) = Cons(e, ListaVacia)
+	ponDr(e, Cons(x, xs)) = Cons(x, ponDr(e, xs))
 	*/
 	void ponDr(const T &elem) {
 		_numElems++;
@@ -96,15 +97,15 @@ public:
 	}
 
 	/**
-	 Devuelve el valor almacenado en la cabecera de la
-	 lista. Es un error preguntar por el primero de
-	 una lista vacía.
+	Devuelve el valor almacenado en la cabecera de la
+	lista. Es un error preguntar por el primero de
+	una lista vacía.
 
-	 primero(Cons(x, xs)) = x
-	 error primero(ListaVacia)
+	primero(Cons(x, xs)) = x
+	error primero(ListaVacia)
 
-	 @return Elemento en la cabecera de la lista.
-	 */
+	@return Elemento en la cabecera de la lista.
+	*/
 	const T &primero() const {
 		if (esVacia())
 			throw EListaVacia();
@@ -112,16 +113,16 @@ public:
 	}
 
 	/**
-	 Devuelve el valor almacenado en la última posición
-	 de la lista (a la derecha).
-	 Es un error preguntar por el primero de una lista vacía.
+	Devuelve el valor almacenado en la última posición
+	de la lista (a la derecha).
+	Es un error preguntar por el primero de una lista vacía.
 
-	 ultimo(Cons(x, xs)) = x           SI esVacia(xs)
-	 ultimo(Cons(x, xs)) = ultimo(xs)  SI !esVacia(xs)
-	 error ultimo(ListaVacia)
+	ultimo(Cons(x, xs)) = x           SI esVacia(xs)
+	ultimo(Cons(x, xs)) = ultimo(xs)  SI !esVacia(xs)
+	error ultimo(ListaVacia)
 
-	 @return Elemento en la cola de la lista.
-	 */
+	@return Elemento en la cola de la lista.
+	*/
 	const T &ultimo() const {
 		if (esVacia())
 			throw EListaVacia();
@@ -130,11 +131,11 @@ public:
 	}
 
 	/**
-	 Elimina el primer elemento de la lista.
-	 Es un error intentar obtener el resto de una lista vacía.
+	Elimina el primer elemento de la lista.
+	Es un error intentar obtener el resto de una lista vacía.
 
-	 resto(Cons(x, xs)) = xs
-	 error resto(ListaVacia)
+	resto(Cons(x, xs)) = xs
+	error resto(ListaVacia)
 	*/
 	void resto() {
 		if (esVacia())
@@ -149,12 +150,12 @@ public:
 	}
 
 	/**
-	 Elimina el último elemento de la lista.
-	 Es un error intentar obtener el inicio de una lista vacía.
+	Elimina el último elemento de la lista.
+	Es un error intentar obtener el inicio de una lista vacía.
 
-	 inicio(Cons(x, ListaVacia)) = ListaVacia
-	 inicio(Cons(x, xs)) = Cons(x, inicio(xs)) SI !esVacia(xs)
-	 error inicio(ListaVacia)
+	inicio(Cons(x, ListaVacia)) = ListaVacia
+	inicio(Cons(x, xs)) = Cons(x, inicio(xs)) SI !esVacia(xs)
+	error inicio(ListaVacia)
 	*/
 	void inicio() {
 		if (esVacia())
@@ -169,43 +170,43 @@ public:
 	}
 
 	/**
-	 Operación observadora para saber si una lista
-	 tiene o no elementos.
+	Operación observadora para saber si una lista
+	tiene o no elementos.
 
-	 esVacia(ListaVacia) = true
-	 esVacia(Cons(x, xs)) = false
+	esVacia(ListaVacia) = true
+	esVacia(Cons(x, xs)) = false
 
-	 @return true si la lista no tiene elementos.
-	 */
+	@return true si la lista no tiene elementos.
+	*/
 	bool esVacia() const {
 		return _prim == NULL;
 	}
 
 	/**
-	 Devuelve el número de elementos que hay en la
-	 lista.
-	 numElems(ListaVacia) = 0
-	 numElems(Cons(x, xs)) = 1 + numElems(xs)
+	Devuelve el número de elementos que hay en la
+	lista.
+	numElems(ListaVacia) = 0
+	numElems(Cons(x, xs)) = 1 + numElems(xs)
 
-	 @return Número de elementos.
-	 */
+	@return Número de elementos.
+	*/
 	unsigned int numElems() const {
 		return _numElems;
 	}
 
 	/**
-	 Devuelve el elemento i-ésimo de la lista, teniendo
-	 en cuenta que el primer elemento (primero())
-	 es el elemento 0 y el último es numElems()-1,
-	 es decir idx está en [0..numElems()-1].
-	 Operación observadora parcial que puede fallar
-	 si se da un índice incorrecto. El índice es
-	 entero sin signo, para evitar que se puedan
-	 pedir elementos negativos.
+	Devuelve el elemento i-ésimo de la lista, teniendo
+	en cuenta que el primer elemento (primero())
+	es el elemento 0 y el último es numElems()-1,
+	es decir idx está en [0..numElems()-1].
+	Operación observadora parcial que puede fallar
+	si se da un índice incorrecto. El índice es
+	entero sin signo, para evitar que se puedan
+	pedir elementos negativos.
 
-	 elem(0, Cons(x, xs)) = x
-	 elem(n, Cons(x, xs)) = elem(n-1, xs) si n > 0
-	 error elem(n, xs) si !( 0 <= n < numElems(xs) )
+	elem(0, Cons(x, xs)) = x
+	elem(n, Cons(x, xs)) = elem(n-1, xs) si n > 0
+	error elem(n, xs) si !( 0 <= n < numElems(xs) )
 	*/
 	const T &elem(unsigned int idx) const {
 		if (idx >= _numElems)
@@ -219,10 +220,10 @@ public:
 	}
 
 	/**
-	 Clase interna que implementa un iterador sobre
-	 la lista que permite recorrer la lista e incluso
-	 alterar el valor de sus elementos.
-	 */
+	Clase interna que implementa un iterador sobre
+	la lista que permite recorrer la lista e incluso
+	alterar el valor de sus elementos.
+	*/
 	class Iterador {
 	public:
 		void avanza() {
@@ -258,36 +259,36 @@ public:
 		// Puntero al nodo actual del recorrido
 		Nodo *_act;
 	};
-	
+
 	/**
-	 Devuelve el iterador al principio de la lista.
-	 @return iterador al principio de la lista;
-	 coincidirá con final() si la lista está vacía.
-	 */
+	Devuelve el iterador al principio de la lista.
+	@return iterador al principio de la lista;
+	coincidirá con final() si la lista está vacía.
+	*/
 	Iterador principio() {
 		return Iterador(_prim);
 	}
 
 	/**
-	 @return Devuelve un iterador al final del recorrido
-	 (fuera de éste).
-	 */
+	@return Devuelve un iterador al final del recorrido
+	(fuera de éste).
+	*/
 	Iterador final() const {
 		return Iterador(NULL);
 	}
 
 	/**
-	 Permite eliminar de la lista el elemento
-	 apuntado por el iterador que se pasa como parámetro.
-	 El iterador recibido DEJA DE SER VÁLIDO. En su
-	 lugar, deberá utilizarse el iterador devuelto, que
-	 apuntará al siguiente elemento al borrado.
-	 @param it Iterador colocado en el elemento que se
-	 quiere borrar.
-	 @return Nuevo iterador colocado en el elemento siguiente
-	 al borrado (podría coincidir con final() si el
-	 elemento que se borró era el último de la lista).
-	 */
+	Permite eliminar de la lista el elemento
+	apuntado por el iterador que se pasa como parámetro.
+	El iterador recibido DEJA DE SER VÁLIDO. En su
+	lugar, deberá utilizarse el iterador devuelto, que
+	apuntará al siguiente elemento al borrado.
+	@param it Iterador colocado en el elemento que se
+	quiere borrar.
+	@return Nuevo iterador colocado en el elemento siguiente
+	al borrado (podría coincidir con final() si el
+	elemento que se borró era el último de la lista).
+	*/
 	Iterador borra(const Iterador &it) {
 		if (it._act == NULL)
 			throw EAccesoInvalido();
@@ -310,31 +311,31 @@ public:
 	}
 
 	/**
-	 Método para insertar un elemento en la lista
-	 en el punto marcado por el iterador. En concreto,
-	 se añade _justo antes_ que el elemento actual. Es
-	 decir, si it==l.primero(), el elemento insertado se
-	 convierte en el primer elemento (y el iterador
-	 apuntará al segundo). Si it==l.final(), el elemento
-	 insertado será el último (e it seguirá apuntando
-	 fuera del recorrido).
-	 @param elem Valor del elemento a insertar.
-	 @param it Punto en el que insertar el elemento.
-	 */
+	Método para insertar un elemento en la lista
+	en el punto marcado por el iterador. En concreto,
+	se añade _justo antes_ que el elemento actual. Es
+	decir, si it==l.primero(), el elemento insertado se
+	convierte en el primer elemento (y el iterador
+	apuntará al segundo). Si it==l.final(), el elemento
+	insertado será el último (e it seguirá apuntando
+	fuera del recorrido).
+	@param elem Valor del elemento a insertar.
+	@param it Punto en el que insertar el elemento.
+	*/
 	void insertar(const T &elem, const Iterador &it) {
 
 		// Caso especial: ¿añadir al principio?
 		if (_prim == it._act) {
 			Cons(elem);
 		} else
-		// Caso especial: ¿añadir al final?
-		if (it._act == NULL) {
-			ponDr(elem);
-		}
-		// Caso normal
-		else {
-			insertaElem(elem, it._act->_ant, it._act);
-		}
+			// Caso especial: ¿añadir al final?
+			if (it._act == NULL) {
+				ponDr(elem);
+			}
+			// Caso normal
+			else {
+				insertaElem(elem, it._act->_ant, it._act);
+			}
 	}
 
 	// //
@@ -402,13 +403,13 @@ private:
 
 
 	/**
-	 Inserta un elemento entre el nodo1 y el nodo2.
-	 Devuelve el puntero al nodo creado.
-	 Caso general: los dos nodos existen.
-	    nodo1->_sig == nodo2
-	    nodo2->_ant == nodo1
-	 Casos especiales: alguno de los nodos no existe
-	    nodo1 == NULL y/o nodo2 == NULL
+	Inserta un elemento entre el nodo1 y el nodo2.
+	Devuelve el puntero al nodo creado.
+	Caso general: los dos nodos existen.
+	nodo1->_sig == nodo2
+	nodo2->_ant == nodo1
+	Casos especiales: alguno de los nodos no existe
+	nodo1 == NULL y/o nodo2 == NULL
 	*/
 	static Nodo *insertaElem(const T &e, Nodo *nodo1, Nodo *nodo2) {
 		Nodo *nuevo = new Nodo(nodo1, e, nodo2);
@@ -420,11 +421,11 @@ private:
 	}
 
 	/**
-	 Elimina el nodo n. Si el nodo tiene nodos antes
-	 o después, actualiza sus punteros anterior y siguiente.
-	 Caso general: hay nodos anterior y siguiente.
-	 Casos especiales: algunos de los nodos (anterior o siguiente
-	 a n) no existen.
+	Elimina el nodo n. Si el nodo tiene nodos antes
+	o después, actualiza sus punteros anterior y siguiente.
+	Caso general: hay nodos anterior y siguiente.
+	Casos especiales: algunos de los nodos (anterior o siguiente
+	a n) no existen.
 	*/
 	static void borraElem(Nodo *n) {
 		assert(n != NULL);
@@ -438,13 +439,13 @@ private:
 	}
 
 	/**
-	 Elimina todos los nodos de la lista enlazada cuyo
-	 primer nodo se pasa como parámetro.
-	 Se admite que el nodo sea NULL (no habrá nada que
-	 liberar). En caso de pasarse un nodo válido,
-	 su puntero al nodo anterior debe ser NULL (si no,
-	 no sería el primero de la lista!).
-	 */
+	Elimina todos los nodos de la lista enlazada cuyo
+	primer nodo se pasa como parámetro.
+	Se admite que el nodo sea NULL (no habrá nada que
+	liberar). En caso de pasarse un nodo válido,
+	su puntero al nodo anterior debe ser NULL (si no,
+	no sería el primero de la lista!).
+	*/
 	static void libera(Nodo *prim) {
 		assert(!prim || !prim->_ant);
 
