@@ -223,9 +223,9 @@ void escena::display()
 	glClear( GL_COLOR_BUFFER_BIT );
 
 
-	if(AVE->baldosas) AVE->embaldosar(5);
+	if(AVE->baldosas) AVE->embaldosar(3);
 	else AVE->drawEscene();
-
+	
 
 	glFlush();
 	glutSwapBuffers();
@@ -262,5 +262,13 @@ void escena::drawEscene()
 
 void escena::activarDesActivarBaldosas(){
 
-	(baldosas)  ? baldosas=false : baldosas=true;
+	if(baldosas)
+	{
+		baldosas=false;
+		glViewport(0, 0, WIDTH, HEIGHT);
+	}
+	else
+	{
+		baldosas=true;
+	}
 }

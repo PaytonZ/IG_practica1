@@ -72,7 +72,7 @@ void inicio()
 		<< "H - Desanidad un nivel del arbol " << std::endl
 		<< "+ / -   -  Zooms de la Escena "<< std::endl
 		<< "Flechas - Exploracion de la escena" << std::endl
-		<< "O / K - zoom progresivo de la escena "<< std::endl
+		<< "O / P - zoom progresivo de la escena "<< std::endl
 		<< "--------------------------------------"<< std::endl ;
 
 	do{

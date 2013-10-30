@@ -18,6 +18,8 @@
 #include "lapiz.h"
 #include "cuadrado.h"
 
+
+
 void  cuadrado::  pintarCuadrado() const
 {
 
