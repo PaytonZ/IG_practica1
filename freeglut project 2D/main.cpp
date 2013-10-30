@@ -23,7 +23,7 @@
 
 // Viewport size
 int WIDTH= 1000, HEIGHT= 500;
-
+int NCOLS;
 
 
 // Scene visible area size
@@ -60,11 +60,21 @@ void intitGL(){
 
 
 
-int main(int argc, char *argv[]){
 
 
-
+void inicio()
+{
 	std::cout<< "Starting ..." << std::endl;
+	std::cout << "- IG Practica 1 - Pythagoras tree " << std::endl 
+		<< "Los controles de esta aplicacion son los siguientes : " << std::endl
+		<< "--------------------------------------"<< std::endl 
+		<< "G - Anidar un nivel del arbol" << std::endl
+		<< "H - Desanidad un nivel del arbol " << std::endl
+		<< "+ / -   -  Zooms de la Escena "<< std::endl
+		<< "Flechas - Exploracion de la escena" << std::endl
+		<< "O / K - zoom progresivo de la escena "<< std::endl
+		<< "--------------------------------------"<< std::endl ;
+
 	do{
 
 		std::cout << "Introduce tam del cuadrado inicial : " << std::endl;
@@ -78,6 +88,15 @@ int main(int argc, char *argv[]){
 
 	std::cin >> ANGULO;
 
+
+}
+
+
+int main(int argc, char *argv[]){
+
+
+	inicio();
+	
 
 
 	//Inicializacion de mi AVE implementada con singleton
