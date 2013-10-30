@@ -223,7 +223,8 @@ void escena::display()
 	glClear( GL_COLOR_BUFFER_BIT );
 
 
-	getAVEInstance()->arbol_pitagoras->pintaCuadrados();
+	if(AVE->baldosas) AVE->embaldosar(5);
+	else AVE->drawEscene();
 
 
 	glFlush();
@@ -235,5 +236,31 @@ void escena::display()
 
 void escena::embaldosar(int nCols)
 {
+	GLdouble SVratio = (xRight-xLeft)/ (yTop - yBot);
+	GLdouble w = (GLdouble) WIDTH / (GLdouble) nCols;
+	GLdouble h = w/SVratio;
 
+	for(GLint c=0; c < nCols ; c++ )
+	{
+
+		GLdouble currentH=0;
+		while( (currentH+ h)  < HEIGHT)
+		{
+			glViewport((GLint) (c*w),(GLint) currentH , (GLint) w , (GLint) h);
+			drawEscene();
+			currentH+=h;
+		}
+	}
+}
+
+void escena::drawEscene()
+{
+	getAVEInstance()->arbol_pitagoras->pintaCuadrados();
+
+}
+
+
+void escena::activarDesActivarBaldosas(){
+
+	(baldosas)  ? baldosas=false : baldosas=true;
 }

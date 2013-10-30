@@ -67,6 +67,8 @@ void controlador::key(unsigned char key, int x, int y){
 		escena::getAVEInstance()->escalacionProgresivo(0.7);
 		break;
 
+	case 'k' : escena::getAVEInstance()->activarDesActivarBaldosas();
+
 	default:
 		need_redisplay = false;
 		break;

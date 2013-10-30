@@ -25,9 +25,13 @@ class escena
 
 public:
 
+
+	bool baldosas;
+
+
 	static escena* getAVEInstance();
 	static escena* getAVEInstance(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop);
-
+		
 	GLdouble getxRight() const;
 	void setxRight(GLdouble);
 
@@ -39,7 +43,6 @@ public:
 
 	GLdouble getyBot() const;
 	void setyBot(GLdouble);
-
 
 	punto getCentro();
 
@@ -64,13 +67,15 @@ public:
 
 	void embaldosar(int);
 
+	void drawEscene();
 
+	void activarDesActivarBaldosas();
 
 private:
 
 	escena() {}
 	escena(GLdouble new_xleft, GLdouble new_yBot , GLdouble new_xright, GLdouble new_yTop):
-		xLeft(new_xleft) , xRight(new_xright) ,  yBot(new_yBot) , yTop(new_yTop) {
+		xLeft(new_xleft) , xRight(new_xright) ,  yBot(new_yBot) , yTop(new_yTop), baldosas(false) {
 			arbol_pitagoras = new arbol();
 
 	}
